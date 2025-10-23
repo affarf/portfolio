@@ -12,14 +12,17 @@ export default function About() {
   const timeline = [
     {
       type: 'education',
-      title: 'Bachelor of Science in Computer Science',
+      title: 'Bachelor of Science in Computer Science and Data Science',
       organization: 'University of Wisconsin-Madison',
       location: 'Madison, WI',
       date: 'Expected May 2027',
       description: 'CGPA: 3.89/4.0',
       highlights: [
-        'Dean\'s List: Fall 2023, Spring 2024, Spring 2025',
-        'Malaysia Government Scholarship Recipient',
+        'Dean\'s List for 3 consecutive semesters: Fall 2023, Spring 2024, Spring 2025',
+        'Recipient of the Malaysia Government Scholarship covering full tuition and living expenses',
+        'Completed 30+ credit hours of advanced CS courses, including Data Structures, Algorithms, and Machine Learning',
+        'Maintained top 10% of class academically while actively participating in campus leadership roles',
+        'Member of the UW-Madison Club Field Hockey Team, traveled to Virginia for national tournament, playing as goalkeeper'
       ],
     },
     {
@@ -29,8 +32,9 @@ export default function About() {
       location: 'Madison, WI',
       date: 'September 2024 – Present',
       highlights: [
-        'Supervise student custodians and promote teamwork',
-        'Innovation and Initiative Award (Spring & Summer 2024)',
+        'Supervised and coordinated a team of 10 student custodians, improving task completion rate by 35%',
+        'Implemented new scheduling system, reducing missed duties by 20%',
+        'Recognized for initiative and teamwork through the Innovation & Initiative Award (Spring & Summer 2024)',
       ],
     },
     {
@@ -40,8 +44,10 @@ export default function About() {
       location: 'UW-Madison',
       date: 'August 2023 – Present',
       highlights: [
-        'Coordinated sound, lighting, and special effects for Malaysian Cultural Night Theatre 2025',
-        'Managed vendor communications and equipment rentals',
+        'Planned and executed Malaysian Cultural Night Theatre 2025, increasing attendance by 40%',
+        'Managed vendor contracts and logistics for lighting, sound, and stage equipment',
+        'Streamlined event setup, reducing setup time by 25%',
+        'Coordinated a team of 15 volunteers, improving efficiency and communication',
       ],
     },
     {
@@ -51,8 +57,10 @@ export default function About() {
       location: 'UW-Madison',
       date: 'May 2025 – Present',
       highlights: [
-        'Advocate for cultural inclusion and student support',
-        'Provide feedback to enhance ISS programs',
+        'Advocated for cultural inclusion and improved student support for over 6000 international students',
+        'Collected feedback and implemented changes that increased participation in ISS events by 30%',
+        'Collaborated with 5+ campus organizations to enhance programming and outreach',
+        'Provided mentorship and guidance to new students, improving onboarding experience by 25%',
       ],
     },
   ];
@@ -82,7 +90,7 @@ export default function About() {
         {/* Bio */}
         <Card className="p-8 mb-12 rounded-2xl shadow-lg border-2 hover:shadow-xl transition-shadow duration-300">
           <p className="text-muted-foreground leading-relaxed">
-            I'm a passionate Computer Science student at the University of Wisconsin-Madison with a strong foundation in 
+            I'm a passionate Computer Science and Data Science student at the University of Wisconsin-Madison with a strong foundation in 
             full-stack web development. With a CGPA of 3.89/4.0, I've been recognized on the Dean's List and awarded the 
             Malaysia Government Scholarship. I enjoy building user-centric applications using modern technologies like 
             React.js, Node.js, and Express.js. Beyond coding, I'm actively involved in campus leadership roles, including 

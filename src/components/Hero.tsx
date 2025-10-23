@@ -1,5 +1,5 @@
 import { ArrowRight, Download } from 'lucide-react';
-import afifImage from '../afif.png'; // Import your image
+import afifImage from '../afif.jpg'; // Import your image
 import { FC } from 'react';
 
 const Hero: FC = () => {
@@ -10,7 +10,7 @@ const Hero: FC = () => {
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          
+
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left">
             <div className="mb-6 inline-block">
@@ -21,17 +21,19 @@ const Hero: FC = () => {
 
             <h1 className="mb-4">
               Hi, I'm{' '}
-              <span className="bg-gradient-to-r from-[var(--pastel-blue)] via-[var(--pastel-lavender)] to-[var(--pastel-mint)] bg-clip-text text-transparent">
+              <span className="text-blue-600 font-extrabold">
                 Afif Bin Mohd Hishamuddin
               </span>
             </h1>
+
+
 
             <h2 className="text-muted-foreground mb-6">
               Computer Science Student & Full-Stack Developer
             </h2>
 
             <p className="text-muted-foreground mb-8 max-w-2xl">
-              Passionate about building elegant web applications with React, Node.js, and modern technologies. 
+              Passionate about building elegant web applications with React, Node.js, and modern technologies.
               Currently studying at the University of Wisconsin-Madison with a focus on creating impactful user experiences.
             </p>
 
