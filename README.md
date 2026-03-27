@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Personal Portfolio Website
 
 A modern, responsive portfolio website built with **React.js** and **Tailwind CSS** to showcase my projects, skills, and experience in computer science and full-stack development.
@@ -44,6 +44,4 @@ git clone https://github.com/affarf/portfolio.git
 cd portfolio
 npm install
 npm start
-=======
-This is a website for project that I have done over my year in UW-Madison
->>>>>>> 564e71c831d2b4f7106641488d1dc95ad08198a6
+

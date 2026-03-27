@@ -1,5 +1,5 @@
 import { ArrowRight, Download } from 'lucide-react';
-import afifImage from '../afif.jpg'; // Import your image
+import afifImage from '@/afif.jpg';
 import { FC } from 'react';
 
 const Hero: FC = () => {
