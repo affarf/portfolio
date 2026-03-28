@@ -9,7 +9,8 @@ interface ProjectCardProps {
     description: string;
     techStack: string[];
     image: string;
-    liveUrl: string;
+    actionUrl?: string;
+    actionLabel?: string;
     githubUrl: string;
   };
 }
@@ -17,34 +18,28 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card 
-      className="w-full max-w-sm overflow-hidden border-2 transition-all duration-300"
+      className="group w-full max-w-sm overflow-hidden border-2 transition-all duration-300"
       style={{
         backgroundColor: '#fdfcf9',
         borderColor: '#e8e4dd',
         boxShadow: '8px 12px 24px rgba(42, 37, 32, 0.12), -2px 2px 8px rgba(0, 0, 0, 0.05)'
       }}
     >
-      {/* Project Image - Polaroid Style */}
+
       <div 
-        className="relative h-48 overflow-hidden border-b-2 p-3"
+        className="relative h-48 overflow-hidden border-b-2"
         style={{
           backgroundColor: '#fdfcf9',
           borderColor: '#e8e4dd',
-          transform: 'rotate(-1deg)'
+          // This adds a soft maroon inner shadow to the edges of the photo container
+          boxShadow: 'inset 0px 0px 24px rgba(139, 69, 69, 0.25), inset 0px -4px 8px rgba(42, 37, 32, 0.2)' 
         }}
       >
-        <div
-          style={{
-            transform: 'rotate(1deg)',
-            boxShadow: 'inset 0 0 8px rgba(42, 37, 32, 0.05)'
-          }}
-        >
-          <ImageWithFallback
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover block"
-          />
-        </div>
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover block indie-img-filter"
+        />
       </div>
 
       {/* Project Content */}
@@ -93,7 +88,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Action Buttons */}
         <div className="flex gap-3">
-          {project.liveUrl && project.liveUrl !== '#' && (
+          {project.actionUrl && project.actionLabel && (
             <Button
               asChild
               size="sm"
@@ -110,9 +105,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 (e.target as HTMLElement).style.boxShadow = '2px 4px 8px rgba(42, 37, 32, 0.1)';
               }}
             >
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              <a href={project.actionUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-2 h-4 w-4" />
-                LIVE
+                {project.actionLabel}
               </a>
             </Button>
           )}

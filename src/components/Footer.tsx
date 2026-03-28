@@ -22,10 +22,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Copyright */}
           <div className="flex items-center gap-2 text-sm font-mono" style={{ color: '#5a5047' }}>
-            <span>© {currentYear} AFIF HISHAMUDDIN</span>
+            <span>© {currentYear} AFIF ARIFUDDIN</span>
             <span style={{ color: '#9d8f7f' }}>•</span>
             <span className="flex items-center gap-1">
-              MADE WITH <Heart className="h-3 w-3 fill-current mx-0.5" style={{ color: '#8b4545' }} /> REACT & TAILWIND
+              MADE WITH REACT & TAILWIND
             </span>
           </div>
 

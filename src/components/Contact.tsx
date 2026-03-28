@@ -36,7 +36,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#f5f1ea' }}>
+    <section id="contact" className="pt-20 pb-12 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#f5f1ea' }}>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 pb-8">

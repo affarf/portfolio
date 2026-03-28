@@ -1,3 +1,4 @@
+import resumePdf from '../assets/resume.pdf';
 import { ArrowRight, Download } from 'lucide-react';
 import afifImage from '../assets/afif.jpg';
 import { FC } from 'react';
@@ -56,8 +57,10 @@ const Hero: FC = () => {
               </a>
 
               <a
-                href="/resume.pdf"
+                href={resumePdf}
                 download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 font-mono font-semibold transition-all duration-300 border-2 shadow-[4px_4px_0px_rgba(139,69,69,0.2)] hover:shadow-[6px_6px_0px_rgba(139,69,69,0.3)] hover:-translate-x-0.5 hover:-translate-y-0.5"
                 style={{
                   backgroundColor: '#fdfcf9',

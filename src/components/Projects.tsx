@@ -1,4 +1,7 @@
 import ProjectCard from './ProjectCard';
+import callInImage from '../assets/call_in.png';
+import portfolioImage from '../assets/portfolio.png';
+import festifyImage from '../assets/festify.jpg';
 
 export default function Projects() {
   const projects = [
@@ -7,9 +10,9 @@ export default function Projects() {
       description:
         'A full-stack web application to automate sick leave notifications with data storage and email confirmation. Built with React.js, Node.js, Express.js, and MongoDB.',
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Nodemailer'],
-      image:
-        'https://images.unsplash.com/photo-1728598909887-2d983a8889b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      liveUrl: '#',
+      image: callInImage,
+      actionUrl: 'https://mediaspace.wisc.edu/media/Leave+Request+Demo/1_kx6ll9ml',
+      actionLabel: 'WATCH DEMO',
       githubUrl: 'https://github.com/affarf/call_in_sick',
     },
     {
@@ -17,9 +20,9 @@ export default function Projects() {
       description:
         'A modern, responsive personal portfolio website built with React and Tailwind CSS. Features sharp design, high contrast, and mobile-first approach.',
       techStack: ['React.js', 'Tailwind CSS', 'TypeScript', 'Figma'],
-      image:
-        'https://images.unsplash.com/photo-1678667720699-5c0fc04ac166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      liveUrl: 'https://affarf.github.io/portfolio/',
+      image: portfolioImage,
+      actionUrl: 'https://affarf.github.io/portfolio/',
+      actionLabel: 'VIEW LIVE',
       githubUrl: 'https://github.com/affarf/portfolio',
     },
     {
@@ -27,9 +30,9 @@ export default function Projects() {
       description:
         'A mobile app that simplifies event creation, management, and participation. Currently in development. Features include event scheduling, RSVPs, venue layouts, QR code check-in, and in-app group chat.',
       techStack: ['Kotlin', 'Firebase', 'QR Code API'],
-      image:
-        'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2340', 
-      liveUrl: '#',
+      image: festifyImage,
+      actionUrl: 'https://drive.google.com/file/d/1ThF1y1mo6VM7RaeGLkcgR-STT6ZoobHF/view',
+      actionLabel: 'WATCH DEMO',
       githubUrl: 'https://github.com/ipanropi/festify', 
     },
   ];
