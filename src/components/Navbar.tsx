@@ -5,22 +5,20 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'HOME', href: '#home' },
+    { name: 'ABOUT', href: '#about' },
+    { name: 'PROJECTS', href: '#projects' },
+    { name: 'CONTACT', href: '#contact' },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 shadow-[0_4px_30px_rgba(42,37,32,0.08)]" style={{ backgroundColor: '#f5f1ea' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#home" className="transition-all duration-300 hover:opacity-70">
-              <span className="bg-gradient-to-r from-[var(--pastel-blue)] via-[var(--pastel-lavender)] to-[var(--pastel-mint)] bg-clip-text text-transparent">
-                Afif Hishamuddin
-              </span>
+            <a href="#home" className="transition-all duration-200 hover:opacity-60 font-black text-lg tracking-tight" style={{ color: '#8b4545', fontFamily: 'var(--font-serif)' }}>
+              AFIF
             </a>
           </div>
 
@@ -30,10 +28,10 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-300 relative group"
+                className="transition-colors duration-200 font-mono text-sm tracking-wider hover:opacity-70"
+                style={{ color: '#5a5047' }}
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
@@ -42,7 +40,8 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-foreground hover:text-primary transition-colors"
+              className="transition-colors hover:opacity-70"
+              style={{ color: '#5a5047' }}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -52,13 +51,14 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background border-t border-border">
+        <div className="md:hidden" style={{ backgroundColor: '#f5f1ea' }}>
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 rounded-xl text-foreground hover:bg-accent transition-colors duration-300"
+                className="block px-3 py-2 transition-colors duration-200 font-mono text-sm hover:opacity-70"
+                style={{ color: '#5a5047' }}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

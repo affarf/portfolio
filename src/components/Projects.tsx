@@ -15,7 +15,7 @@ export default function Projects() {
     {
       title: 'Portfolio Website',
       description:
-        'A modern, responsive personal portfolio website built with React and Tailwind CSS. Features smooth animations, pastel design, and mobile-first approach.',
+        'A modern, responsive personal portfolio website built with React and Tailwind CSS. Features sharp design, high contrast, and mobile-first approach.',
       techStack: ['React.js', 'Tailwind CSS', 'TypeScript', 'Figma'],
       image:
         'https://images.unsplash.com/photo-1678667720699-5c0fc04ac166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
@@ -23,7 +23,7 @@ export default function Projects() {
       githubUrl: 'https://github.com/affarf/portfolio',
     },
     {
-      title: 'Festify (In Progress)',
+      title: 'Festify',
       description:
         'A mobile app that simplifies event creation, management, and participation. Currently in development. Features include event scheduling, RSVPs, venue layouts, QR code check-in, and in-app group chat.',
       techStack: ['Kotlin', 'Firebase', 'QR Code API'],
@@ -37,14 +37,25 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col justify-center items-center py-20 px-4 sm:px-6 lg:px-8 bg-muted/30"
+      className="min-h-screen flex flex-col justify-center items-center py-20 px-4 sm:px-6 lg:px-8"
+      style={{ backgroundColor: '#f5f1ea' }}
     >
       <div className="max-w-7xl w-full">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="mb-4">My Projects</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[var(--pastel-lavender)] to-[var(--pastel-mint)] mx-auto rounded-full"></div>
-          <p className="text-muted-foreground mt-6 max-w-2xl mx-auto">
+        <div 
+          className="text-center mb-16 pb-8"
+        >
+          <h2 
+            className="mb-4 font-black text-5xl tracking-tight"
+            style={{ fontFamily: 'var(--font-serif)', color: '#2a2520' }}
+          >
+            Projects
+          </h2>
+          <p className="font-mono text-sm tracking-widest" style={{ color: '#8b4545' }}>▬ SELECTED WORK</p>
+          <p 
+            className="mt-6 max-w-2xl mx-auto font-mono text-sm leading-relaxed"
+            style={{ color: '#5a5047' }}
+          >
             Here are some of my recent projects showcasing my skills in full-stack development,
             UI/UX design, and problem-solving.
           </p>

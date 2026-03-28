@@ -4,22 +4,28 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'HOME', href: '#home' },
+    { name: 'ABOUT', href: '#about' },
+    { name: 'PROJECTS', href: '#projects' },
+    { name: 'CONTACT', href: '#contact' },
   ];
 
   return (
-    <footer className="bg-muted/30 border-t border-border py-8 px-4 sm:px-6 lg:px-8">
+    <footer 
+      className="border-t-2 py-8 px-4 sm:px-6 lg:px-8"
+      style={{
+        backgroundColor: '#f5f1ea',
+        borderTopColor: '#c4a856'
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Copyright */}
-          <div className="flex items-center gap-2 text-muted-foreground text-sm">
-            <span>© {currentYear} Afif Hishamuddin</span>
-            <span>•</span>
+          <div className="flex items-center gap-2 text-sm font-mono" style={{ color: '#5a5047' }}>
+            <span>© {currentYear} AFIF HISHAMUDDIN</span>
+            <span style={{ color: '#9d8f7f' }}>•</span>
             <span className="flex items-center gap-1">
-              Made with <Heart className="h-4 w-4 fill-red-400 text-red-400" /> using React & Tailwind CSS
+              MADE WITH <Heart className="h-3 w-3 fill-current mx-0.5" style={{ color: '#8b4545' }} /> REACT & TAILWIND
             </span>
           </div>
 
@@ -29,7 +35,8 @@ export default function Footer() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+                className="text-sm font-mono font-medium tracking-wider transition-all duration-200 hover:opacity-70"
+                style={{ color: '#8b4545' }}
               >
                 {link.name}
               </a>
