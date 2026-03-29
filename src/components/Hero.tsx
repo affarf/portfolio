@@ -71,12 +71,16 @@ const Hero: FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-16">
 
           {/* Text Content */}
+                    <br />
+            <br />
+            <br />
           <div className="flex-1 text-center md:text-left space-y-6">
             <div className="inline-block font-mono text-sm tracking-widest" style={{ color: '#8b4545' }}>
               <span>Hello, I am...</span>
             </div>
 
             {/* Scramble name */}
+  
             <h1
               style={{
                 fontFamily: 'var(--font-mono)',
@@ -142,6 +146,8 @@ const Hero: FC = () => {
             </a>
           </div>
 
+          <br />
+
           {/* Profile Image - Polaroid with load animation */}
           <div className="flex-1 w-[140px] sm:w-[140px] md:w-[200px] mt-10 md:mt-0">
             <div
@@ -154,6 +160,7 @@ const Hero: FC = () => {
                 transition: 'transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
               }}
             >
+              <br/>
               <div className="w-full overflow-hidden bg-[#e8e4dd]" style={{ aspectRatio: '1 / 1' }}>
                 <img
                   src={afifImage}

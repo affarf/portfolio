@@ -145,7 +145,7 @@ export default function Now() {
     {
       id: '01',
       label: 'Currently Listening',
-      content: 'Spinning Frank Ocean, early indie tracks, and vintage The Strokes',
+      content: 'Spinning Frank Ocean, early indie tracks, and vintage Alex Turner',
       image: blonde,
       rotation: '-rotate-2',
     },
@@ -267,16 +267,32 @@ export default function Now() {
                     {entry.content}
 
                     {entry.label === 'Currently Listening' && (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', marginTop: '24px' }}>
+                        
                         <iframe
-                    style={{ borderRadius: '12px', marginTop: '1rem' }}
-                    src="https://open.spotify.com/embed/album/3mH6qwIy9crq0I9YQbOuDf"
-                    width="100%"
-                    height="152"
-                    frameBorder="0"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                    />
-                    )}
+                            style={{ borderRadius: '12px 12px 0 0' }}
+                            src="https://open.spotify.com/embed/album/3mH6qwIy9crq0I9YQbOuDf?utm_source=generator&theme=0"
+                            width="100%"
+                            height="200"
+                            frameBorder="0"
+                            allowFullScreen
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"
+                        />
+
+                        <iframe
+                            style={{ borderRadius: '0 0 12px 12px' }}
+                            src="https://open.spotify.com/embed/album/3OqRGywivnQ0IeClUeUa4n?utm_source=generator&theme=0"
+                            width="100%"
+                            height="200"
+                            frameBorder="0"
+                            allowFullScreen
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"
+                        />
+
+                        </div>
+                        )}
 
                     {entry.label === 'Deep-Diving' && (
                     <iframe
@@ -290,6 +306,7 @@ export default function Now() {
                         allowFullScreen
                         />
                     )}
+                    <br />
 
 
                     {entry.label === 'Currently Playing' && (

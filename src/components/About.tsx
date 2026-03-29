@@ -1,6 +1,7 @@
 import { GraduationCap, Briefcase, Award } from 'lucide-react';
 import { Card } from './ui/card';
 import SkillBadge from './SkillBadge';
+import { useInView } from '../hooks/useInView';
 import housing from '../assets/housing.jpg';
 import education from '../assets/uw-madison.png';
 import iss from '../assets/iss.jpg';
@@ -8,6 +9,8 @@ import fp_m from '../assets/fp&m.png';
 import mysa from '../assets/mysa.png';
 
 export default function About() {
+  const { ref: headerRef, inView: headerInView } = useInView();
+  const { ref: skillsRef, inView: skillsInView } = useInView();
   const skills = {
     languages: ['Java', 'JavaScript', 'Python', 'C', 'C++', 'R', 'Kotlin'],
     web: ['React.js', 'React Native', 'Node.js', 'Express.js', 'HTML', 'CSS'],
@@ -109,20 +112,30 @@ export default function About() {
     <section id="about" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#f5f1ea' }}>
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 pb-8">
+        <div
+          ref={headerRef}
+          className="text-center mb-16 pb-8"
+          style={{
+            opacity: headerInView ? 1 : 0,
+            transform: headerInView ? 'translateY(0)' : 'translateY(32px)',
+            transition: 'opacity 0.6s ease, transform 0.6s ease',
+          }}
+        >
           <h2 className="mb-4 font-black text-5xl tracking-tight" style={{ fontFamily: 'var(--font-serif)', color: '#2a2520' }}>
             About
           </h2>
-          <p className="font-mono text-sm tracking-widest" style={{ color: '#8b4545' }}>▬ MY STORY & EXPERIENCE</p>
+          <p className="font-mono text-sm tracking-widest" style={{ color: '#8b4545' }}>MY STORY & EXPERIENCE</p>
         </div>
 
         {/* Bio Card */}
-        <div className="p-8 mb-12 border-2 transition-all duration-300 hover:shadow-lg"
+        <div
+          className="p-8 mb-12 border-2 transition-all duration-300 hover:shadow-lg"
           style={{
             backgroundColor: '#fdfcf9',
             borderColor: '#e8e4dd',
-            boxShadow: '6px 8px 16px rgba(42, 37, 32, 0.08)'
-          }}>
+            boxShadow: '6px 8px 16px rgba(42, 37, 32, 0.08)',
+          }}
+        >
           <p className="leading-relaxed font-mono text-lg" style={{ color: '#5a5047', lineHeight: 1.8 }}>
             I'm a passionate Computer Science and Data Science student at the University of Wisconsin-Madison with a strong foundation in 
             full-stack web development. With a CGPA of 3.92/4.0, I've been recognized on the Dean's List and awarded the 
@@ -134,7 +147,15 @@ export default function About() {
         </div>
 
         {/* Skills */}
-        <div className="mb-16">
+        <div
+          ref={skillsRef}
+          className="mb-16"
+          style={{
+            opacity: skillsInView ? 1 : 0,
+            transform: skillsInView ? 'translateY(0)' : 'translateY(32px)',
+            transition: 'opacity 0.6s ease, transform 0.6s ease',
+          }}
+        >
           <h3 className="mb-8 font-black text-3xl" style={{ fontFamily: 'var(--font-serif)', color: '#2a2520' }}>
             Technical Skills
           </h3>
@@ -176,16 +197,22 @@ export default function About() {
           </h3>
           
           <div className="space-y-6">
-            {timeline.map((item, index) => (
-              <div 
-                key={index}
-                className="p-8 border-2 transition-all duration-300 hover:shadow-lg"
-                style={{
-                  backgroundColor: '#fdfcf9',
-                  borderColor: '#e8e4dd',
-                  boxShadow: `${4 + index}px ${6 + index}px 12px rgba(42, 37, 32, 0.06)`
-                }}
-              >
+            {timeline.map((item, index) => {
+              const { ref, inView } = useInView();
+              return (
+                <div
+                  key={index}
+                  ref={ref}
+                  className="p-8 border-2 transition-all duration-300 hover:shadow-lg"
+                  style={{
+                    backgroundColor: '#fdfcf9',
+                    borderColor: '#e8e4dd',
+                    boxShadow: `${4 + index}px ${6 + index}px 12px rgba(42, 37, 32, 0.06)`,
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? 'translateY(0)' : 'translateY(24px)',
+                    transition: `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`,
+                  }}
+                >
                 <div className="flex items-start gap-4">
                 <div className="w-16 h-16 flex items-center justify-center flex-shrink-0 bg-transparent">
                   {getIcon(item.type)}
@@ -216,7 +243,8 @@ export default function About() {
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

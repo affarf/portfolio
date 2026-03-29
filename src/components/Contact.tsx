@@ -1,7 +1,10 @@
 import { Mail, Linkedin, Github, MapPin } from 'lucide-react';
 import { Card } from './ui/card';
+import { useInView } from '../hooks/useInView';
 
 export default function Contact() {
+  const { ref: headerRef, inView: headerInView } = useInView();
+  const { ref: gridRef, inView: gridInView } = useInView();
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
@@ -39,18 +42,34 @@ export default function Contact() {
     <section id="contact" className="pt-20 pb-12 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#f5f1ea' }}>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 pb-8">
+        <div
+          ref={headerRef}
+          className="text-center mb-16 pb-8"
+          style={{
+            opacity: headerInView ? 1 : 0,
+            transform: headerInView ? 'translateY(0)' : 'translateY(32px)',
+            transition: 'opacity 0.6s ease, transform 0.6s ease',
+          }}
+        >
           <h2 className="mb-4 font-black text-5xl tracking-tight" style={{ fontFamily: 'var(--font-serif)', color: '#2a2520' }}>
             Get in Touch
           </h2>
-          <p className="font-mono text-sm tracking-widest" style={{ color: '#8b4545' }}>▬ LET'S CONNECT</p>
+          <p className="font-mono text-sm tracking-widest" style={{ color: '#8b4545' }}>LET'S CONNECT</p>
           <p className="mt-6 max-w-2xl mx-auto font-mono text-sm leading-relaxed" style={{ color: '#5a5047' }}>
             I'm always open to new opportunities and collaborations. Feel free to reach out.
           </p>
         </div>
 
         {/* Contact Info and Socials */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
+          style={{
+            opacity: gridInView ? 1 : 0,
+            transform: gridInView ? 'translateY(0)' : 'translateY(32px)',
+            transition: 'opacity 0.6s ease 0.15s, transform 0.6s ease 0.15s',
+          }}
+        >
           {/* Contact Information */}
           <div>
             <h3 className="mb-6 font-black text-2xl tracking-tight" style={{ fontFamily: 'var(--font-serif)', color: '#2a2520' }}>

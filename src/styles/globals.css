@@ -1,88 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Crimson+Text:ital@0;1&family=Roboto+Mono:wght@400;500;700&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
   --font-size: 16px;
-  --background: #fafbfd;
-  --foreground: #2d3748;
-  --card: #ffffff;
-  --card-foreground: #2d3748;
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: #6b7fd7;
-  --primary-foreground: #ffffff;
-  --secondary: #e0d4f7;
-  --secondary-foreground: #4a5568;
-  --muted: #f0f4f8;
-  --muted-foreground: #718096;
-  --accent: #d4f1e8;
-  --accent-foreground: #2d3748;
-  --destructive: #d4183d;
-  --destructive-foreground: #ffffff;
-  --border: rgba(0, 0, 0, 0.08);
-  --input: transparent;
-  --input-background: #f7fafc;
-  --switch-background: #cbced4;
+  
+  /* Analog Indie Rock Palette */
+  --background: #f5f1ea;
+  --foreground: #2a2520;
+  --card: #fdfcf9;
+  --card-foreground: #2a2520;
+  --popover: #fdfcf9;
+  --popover-foreground: #2a2520;
+  --primary: #8b4545;
+  --primary-foreground: #fdfcf9;
+  --secondary: #c4a856;
+  --secondary-foreground: #2a2520;
+  --muted: #9d8f7f;
+  --muted-foreground: #5a5047;
+  --accent: #4a6fa5;
+  --accent-foreground: #fdfcf9;
+  --destructive: #8b4545;
+  --destructive-foreground: #fdfcf9;
+  --border: #e8e4dd;
+  --input: #fdfcf9;
+  --input-background: #f5f1ea;
+  --switch-background: #c4a856;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 1rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #030213;
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --ring: #8b4545;
+  --chart-1: #8b4545;
+  --chart-2: #c4a856;
+  --chart-3: #4a6fa5;
+  --chart-4: #9d8f7f;
+  --chart-5: #5a5047;
+  --radius: 0;
+  --sidebar: #f5f1ea;
+  --sidebar-foreground: #2a2520;
+  --sidebar-primary: #8b4545;
+  --sidebar-primary-foreground: #fdfcf9;
+  --sidebar-accent: #c4a856;
+  --sidebar-accent-foreground: #2a2520;
+  --sidebar-border: #e8e4dd;
+  --sidebar-ring: #8b4545;
   
-  /* Pastel color palette */
-  --pastel-blue: #a8c7fa;
-  --pastel-lavender: #d4c5f9;
-  --pastel-mint: #b4e4ce;
-  --pastel-peach: #ffd4b8;
-  --pastel-pink: #ffc7d8;
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Roboto Mono', 'Courier New', monospace;
+  --font-sans: 'Crimson Text', Georgia, serif;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  --background: #f5f1ea;
+  --foreground: #2a2520;
+  --card: #fdfcf9;
+  --card-foreground: #2a2520;
+  --popover: #fdfcf9;
+  --popover-foreground: #2a2520;
+  --primary: #8b4545;
+  --primary-foreground: #fdfcf9;
+  --secondary: #c4a856;
+  --secondary-foreground: #2a2520;
+  --muted: #9d8f7f;
+  --muted-foreground: #5a5047;
+  --accent: #4a6fa5;
+  --accent-foreground: #fdfcf9;
+  --destructive: #8b4545;
+  --destructive-foreground: #fdfcf9;
+  --border: #e8e4dd;
+  --input: #fdfcf9;
+  --ring: #8b4545;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --chart-1: #8b4545;
+  --chart-2: #c4a856;
+  --chart-3: #4a6fa5;
+  --chart-4: #9d8f7f;
+  --chart-5: #5a5047;
+  --sidebar: #f5f1ea;
+  --sidebar-foreground: #2a2520;
+  --sidebar-primary: #8b4545;
+  --sidebar-primary-foreground: #fdfcf9;
+  --sidebar-accent: #c4a856;
+  --sidebar-accent-foreground: #2a2520;
+  --sidebar-border: #e8e4dd;
+  --sidebar-ring: #8b4545;
 }
 
 @theme inline {
@@ -124,6 +126,11 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --font-family-serif: 'Playfair Display', Georgia, serif;
+  --font-family-mono: 'Roboto Mono', 'Courier New', monospace;
+  --font-family-sans: 'Crimson Text', Georgia, serif;
+
+  /* ...rest unchanged */
 }
 
 @layer base {

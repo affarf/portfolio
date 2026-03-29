@@ -2,8 +2,10 @@ import ProjectCard from './ProjectCard';
 import callInImage from '../assets/call_in.png';
 import portfolioImage from '../assets/portfolio.png';
 import festifyImage from '../assets/festify.jpg';
+import { useInView } from '../hooks/useInView';
 
 export default function Projects() {
+  const { ref: headerRef, inView: headerInView } = useInView();
   const projects = [
     {
       title: 'UW-Housing Call in Sick App',
@@ -45,8 +47,14 @@ export default function Projects() {
     >
       <div className="max-w-7xl w-full">
         {/* Header */}
-        <div 
+        <div
+          ref={headerRef}
           className="text-center mb-16 pb-8"
+          style={{
+            opacity: headerInView ? 1 : 0,
+            transform: headerInView ? 'translateY(0)' : 'translateY(32px)',
+            transition: 'opacity 0.6s ease, transform 0.6s ease',
+          }}
         >
           <h2 
             className="mb-4 font-black text-5xl tracking-tight"
@@ -54,7 +62,7 @@ export default function Projects() {
           >
             Projects
           </h2>
-          <p className="font-mono text-sm tracking-widest" style={{ color: '#8b4545' }}>▬ SELECTED WORK</p>
+          <p className="font-mono text-sm tracking-widest" style={{ color: '#8b4545' }}>SELECTED WORK</p>
           <p 
             className="mt-6 max-w-2xl mx-auto font-mono text-sm leading-relaxed"
             style={{ color: '#5a5047' }}
@@ -67,9 +75,22 @@ export default function Projects() {
         {/* Centered Grid */}
         <div className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
+            {projects.map((project, index) => {
+              const { ref, inView } = useInView();
+              return (
+                <div
+                  key={index}
+                  ref={ref}
+                  style={{
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? 'translateY(0)' : 'translateY(24px)',
+                    transition: `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`,
+                  }}
+                >
+                  <ProjectCard project={project} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

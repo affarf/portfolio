@@ -1,38 +1,40 @@
+
 import { useEffect } from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Now from './components/Now';
+import Zine from './components/Zine';
 
 export default function App() {
-  useEffect(() => {
-    // Smooth scroll behavior
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href')!);
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
-        }
-      });
-    });
-  }, []);
+
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <HashRouter>
+      <div className="min-h-screen bg-zinc-950">
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <main>
+                  <Hero />
+                  <About />
+                  <Projects />
+                  <Contact />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route path="/now" element={<Now />} />
+        </Routes>
+      </div>
+    </HashRouter>
   );
 }
