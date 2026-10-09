@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { ArrowRight, Download } from 'lucide-react';
-import resumePdf from '../../assets/resume.pdf';
+import resumePdf from '../../assets/Resume_Afif_Arifuddin.pdf';
 
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&';
 const FINAL_NAME = 'Afif Arifuddin';

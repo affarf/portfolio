@@ -95,3 +95,433 @@
 @media (max-width: 767px) {
   .now-polaroid img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
 }
+/* Stardew Valley — display full landscape artwork */
+
+.now-polaroid-landscape {
+  width: 100%;
+  max-width: 420px;
+}
+
+.now-polaroid-landscape img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Override square-image rules on mobile */
+
+@media (max-width: 767px) {
+  .now-polaroid-landscape {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .now-polaroid-landscape img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+}
+
+
+/* ==========================================
+   STARDEW VALLEY FARM JOURNAL
+   ========================================== */
+
+.stardew-journal {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 28px;
+  padding: 22px;
+
+  background-color: #fdfcf9;
+  border: 1px solid #e8e4dd;
+  box-shadow: 4px 5px 0 rgba(42, 37, 32, 0.06);
+
+  font-family: var(--font-mono, monospace);
+}
+
+.stardew-journal-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e8e4dd;
+}
+
+.stardew-journal-title {
+  color: #2a2520;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.stardew-journal-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #8b4545;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.stardew-status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #8b4545;
+  animation: stardew-pulse 1.8s ease-in-out infinite;
+}
+
+.stardew-journal-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.stardew-journal-entry {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #5a5047;
+  font-size: 12px;
+  line-height: 1.6;
+
+  opacity: 0;
+  animation: stardew-reveal 0.5s ease-out forwards;
+}
+
+.stardew-journal-entry:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.stardew-journal-entry:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.stardew-journal-entry:nth-child(3) {
+  animation-delay: 0.65s;
+}
+
+.stardew-entry-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+
+  background-color: #f5f1ea;
+  font-size: 18px;
+}
+
+.stardew-journal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  padding-top: 14px;
+  border-top: 1px solid #e8e4dd;
+
+  color: #8b4545;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.stardew-save-status {
+  animation: stardew-blink 2.5s ease-in-out infinite;
+}
+
+@keyframes stardew-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stardew-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(139, 69, 69, 0.35);
+  }
+
+  50% {
+    opacity: 0.65;
+    box-shadow: 0 0 0 6px rgba(139, 69, 69, 0);
+  }
+}
+
+@keyframes stardew-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 767px) {
+  .stardew-journal {
+    padding: 16px;
+    margin-top: 22px;
+  }
+
+  .stardew-journal-entry {
+    font-size: 12px;
+  }
+
+  .stardew-journal-footer {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stardew-status-dot,
+  .stardew-save-status,
+  .stardew-journal-entry {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   LIFE LATELY
+   ========================================== */
+
+.now-life-caption {
+  margin-top: 24px;
+
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+
+  color: #8b4545;
+}
+
+/* Gentle photo movement for Life Lately */
+
+.now-polaroid-1 {
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+@media (hover: hover) {
+  .now-polaroid-1:hover {
+    transform: rotate(0deg) translateY(-6px);
+  }
+}
+
+/* Give the fourth Polaroid its own rotation */
+
+.now-polaroid-4 {
+  transform: rotate(2deg);
+}
+
+/* Ensure landscape photographs aren't cropped */
+
+.now-polaroid-landscape img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .now-life-caption {
+    margin-top: 20px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .now-polaroid-landscape {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================
+   LIFE LATELY — ANIMATED POSTCARD
+   ========================================== */
+
+.now-love-postcard {
+  width: 100%;
+  margin-top: 30px;
+  padding: 26px;
+  background: #fdfcf9;
+  border: 1px solid #e8e4dd;
+  box-shadow: 5px 7px 0 rgba(42, 37, 32, 0.06);
+  font-family: var(--font-mono, monospace);
+
+  animation: postcard-appear 0.8s ease-out both;
+}
+
+.now-postcard-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: #8b4545;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.now-postcard-heart {
+  flex-shrink: 0;
+  fill: rgba(139, 69, 69, 0.12);
+  color: #8b4545;
+  animation: postcard-heartbeat 2.5s ease-in-out infinite;
+}
+
+.now-love-postcard h4 {
+  margin: 24px 0 12px;
+  color: #2a2520;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(20px, 2.3vw, 27px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.now-postcard-message {
+  margin: 0;
+  color: #5a5047;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.now-postcard-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid #e8e4dd;
+
+  color: #8b4545;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.now-postcard-typing::after {
+  content: " |";
+  animation: postcard-cursor 1s steps(1, end) infinite;
+}
+
+/* Animations */
+
+@keyframes postcard-appear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes postcard-heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.15);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.12);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+@keyframes postcard-cursor {
+  0%, 49% {
+    opacity: 1;
+  }
+
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .now-love-postcard {
+    margin-top: 24px;
+    padding: 20px 18px;
+  }
+
+  .now-postcard-top {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .now-postcard-message {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .now-postcard-bottom {
+    font-size: 9px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .now-love-postcard,
+  .now-postcard-heart {
+    animation: none;
+  }
+
+  .now-postcard-typing::after {
+    animation: none;
+  }
+}
+/* Make the Life Lately photograph more prominent */
+
+.now-interest:first-child .now-polaroid-landscape {
+  width: 100%;
+  max-width: 460px;
+}
+
+@media (max-width: 767px) {
+  .now-interest:first-child .now-polaroid-landscape {
+    max-width: 100%;
+  }
+}
