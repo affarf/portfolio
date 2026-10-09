@@ -1,142 +1,64 @@
 import { ExternalLink, Github } from 'lucide-react';
-import { Card } from './ui/card';
-import { Button } from './ui/button';
-import { ImageWithFallback } from './ImageWithFallback';
+import type { Project } from './projects/projectData';
 
-interface ProjectCardProps {
-  project: {
-    title: string;
-    description: string;
-    techStack: string[];
-    image: string;
-    actionUrl?: string;
-    actionLabel?: string;
-    githubUrl: string;
-  };
-}
+type ProjectCardProps = {
+  project: Project;
+};
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card 
-      className="group w-full max-w-sm overflow-hidden border-2 transition-all duration-300"
-      style={{
-        backgroundColor: '#fdfcf9',
-        borderColor: '#e8e4dd',
-        boxShadow: '8px 12px 24px rgba(42, 37, 32, 0.12), -2px 2px 8px rgba(0, 0, 0, 0.05)'
-      }}
-    >
-
-      <div 
-        className="relative h-48 overflow-hidden border-b-2"
-        style={{
-          backgroundColor: '#fdfcf9',
-          borderColor: '#e8e4dd',
-          // This adds a soft maroon inner shadow to the edges of the photo container
-          boxShadow: 'inset 0px 0px 24px rgba(139, 69, 69, 0.25), inset 0px -4px 8px rgba(42, 37, 32, 0.2)' 
-        }}
-      >
+    <article className="portfolio-project-card">
+      <div className="portfolio-project-image-wrap">
         <img
           src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover block indie-img-filter"
+          alt={`${project.title} project preview`}
+          className="portfolio-project-image indie-img-filter"
+          loading="lazy"
         />
       </div>
 
-      {/* Project Content */}
-      <div className="p-6">
-        <h3 
-          className="mb-3 font-black text-lg tracking-tight"
-          style={{ fontFamily: 'var(--font-serif)', color: '#2a2520' }}
-        >
-          {project.title}
-        </h3>
+      <div className="portfolio-project-content">
+        <h3 className="portfolio-project-title">{project.title}</h3>
+        <p className="portfolio-project-description">{project.description}</p>
 
-        <p 
-          className="text-sm mb-4 line-clamp-3 font-mono leading-relaxed"
-          style={{ color: '#5a5047' }}
-        >
-          {project.description}
-        </p>
-
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {project.techStack.slice(0, 3).map((tech, index) => (
+        <div className="portfolio-project-stack" aria-label="Technologies used">
+          {project.techStack.map((tech, index) => (
             <span
-              key={index}
-              className="px-2 py-1 text-xs border-2 font-mono font-semibold tracking-wider"
-              style={{
-                borderColor: ['#8b4545', '#c4a856', '#4a6fa5'][index % 3],
-                color: ['#8b4545', '#c4a856', '#4a6fa5'][index % 3],
-                backgroundColor: '#fdfcf9'
-              }}
+              key={tech}
+              className={`portfolio-project-tech portfolio-project-tech-${index % 3}`}
             >
               {tech}
             </span>
           ))}
-          {project.techStack.length > 3 && (
-            <span 
-              className="px-2 py-1 text-xs border-2 font-mono font-semibold"
-              style={{
-                borderColor: '#9d8f7f',
-                color: '#9d8f7f'
-              }}
-            >
-              +{project.techStack.length - 3}
-            </span>
-          )}
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex gap-3">
+        <div className="portfolio-project-actions">
           {project.actionUrl && project.actionLabel && (
-            <Button
-              asChild
-              size="sm"
-              className="flex-1 font-mono font-semibold border-2 transition-all duration-200 transform hover:-translate-y-0.5"
-              style={{
-                backgroundColor: '#8b4545',
-                borderColor: '#8b4545',
-                color: '#fdfcf9'
-              }}
-              onMouseEnter={(e) => {
-                (e.target as HTMLElement).style.boxShadow = '4px 8px 16px rgba(139, 69, 69, 0.3)';
-              }}
-              onMouseLeave={(e) => {
-                (e.target as HTMLElement).style.boxShadow = '2px 4px 8px rgba(42, 37, 32, 0.1)';
-              }}
+            <a
+              className="portfolio-project-action portfolio-project-action-primary"
+              href={project.actionUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${project.actionLabel} for ${project.title} (opens in a new tab)`}
             >
-              <a href={project.actionUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                {project.actionLabel}
-              </a>
-            </Button>
+              <ExternalLink size={16} aria-hidden="true" />
+              <span>{project.actionLabel}</span>
+            </a>
           )}
-
           {project.githubUrl && (
-            <Button
-              asChild
-              size="sm"
-              className="flex-1 font-mono font-semibold border-2 transition-all duration-200 transform hover:-translate-y-0.5"
-              style={{
-                backgroundColor: 'transparent',
-                borderColor: '#8b4545',
-                color: '#8b4545'
-              }}
-              onMouseEnter={(e) => {
-                (e.target as HTMLElement).style.boxShadow = '4px 8px 16px rgba(139, 69, 69, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                (e.target as HTMLElement).style.boxShadow = '2px 4px 8px rgba(42, 37, 32, 0.1)';
-              }}
+            <a
+              className="portfolio-project-action portfolio-project-action-secondary"
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.title} source code on GitHub (opens in a new tab)`}
             >
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-4 w-4" />
-                CODE
-              </a>
-            </Button>
+              <Github size={16} aria-hidden="true" />
+              <span>CODE</span>
+            </a>
           )}
         </div>
       </div>
-    </Card>
+    </article>
   );
 }

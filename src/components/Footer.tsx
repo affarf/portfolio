@@ -1,48 +1,54 @@
-import { Heart } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+import './navigation.css';
+
+const footerLinks = [
+  { label: 'HOME', section: 'home' },
+  { label: 'ABOUT', section: 'about' },
+  { label: 'PROJECTS', section: 'projects' },
+  { label: 'CONTACT', section: 'contact' },
+] as const;
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const pendingSection = useRef<string | null>(null);
 
-  const quickLinks = [
-    { name: 'HOME', href: '#home' },
-    { name: 'ABOUT', href: '#about' },
-    { name: 'PROJECTS', href: '#projects' },
-    { name: 'CONTACT', href: '#contact' },
-  ];
+  useEffect(() => {
+    if (location.pathname !== '/' || !pendingSection.current) return;
+    const section = pendingSection.current;
+    pendingSection.current = null;
+    const frame = window.requestAnimationFrame(() => {
+      if (section === 'home') window.scrollTo({ top: 0, behavior: 'smooth' });
+      else document.getElementById(section)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [location.pathname]);
+
+  const navigateToSection = (section: string) => {
+    if (location.pathname !== '/') {
+      pendingSection.current = section;
+      navigate('/');
+      return;
+    }
+    if (section === 'home') window.scrollTo({ top: 0, behavior: 'smooth' });
+    else document.getElementById(section)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
-    <footer 
-      className="border-t-2 py-8 px-4 sm:px-6 lg:px-8"
-      style={{
-        backgroundColor: '#f5f1ea',
-        borderTopColor: '#c4a856'
-      }}
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Copyright */}
-          <div className="flex items-center gap-2 text-sm font-mono" style={{ color: '#5a5047' }}>
-            <span>© {currentYear} AFIF ARIFUDDIN</span>
-            <span style={{ color: '#9d8f7f' }}>•</span>
-            <span className="flex items-center gap-1">
-              MADE WITH REACT & TAILWIND
-            </span>
-          </div>
-
-          {/* Quick Links */}
-          <div className="flex gap-6">
-            {quickLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-mono font-medium tracking-wider transition-all duration-200 hover:opacity-70"
-                style={{ color: '#8b4545' }}
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
+    <footer className="portfolio-footer">
+      <div className="portfolio-footer-inner">
+        <div className="portfolio-footer-brand">
+          <span>© {new Date().getFullYear()} AFIF ARIFUDDIN</span>
+          <span className="portfolio-footer-separator" aria-hidden="true">·</span>
+          <span>MADE WITH REACT & TAILWIND</span>
         </div>
+        <nav className="portfolio-footer-links" aria-label="Footer navigation">
+          {footerLinks.map((item) => (
+            <button key={item.label} type="button" onClick={() => navigateToSection(item.section)}>{item.label}</button>
+          ))}
+          <Link to="/now">NOW</Link>
+        </nav>
       </div>
     </footer>
   );

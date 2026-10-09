@@ -1,0 +1,81 @@
+
+.portfolio-skill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 16px;
+  min-height: 42px;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  border: 2px solid;
+  border-radius: 0;
+
+  background: transparent;
+
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+  text-align: center;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.skill-crimson {
+  color: #8b4545;
+  border-color: #8b4545;
+  --skill-hover-bg: #8b4545;
+  --skill-hover-text: #fdfcf9;
+}
+
+.skill-mustard {
+  color: #957619;
+  border-color: #c4a856;
+  --skill-hover-bg: #c4a856;
+  --skill-hover-text: #2a2520;
+}
+
+.skill-blue {
+  color: #4a6fa5;
+  border-color: #4a6fa5;
+  --skill-hover-bg: #4a6fa5;
+  --skill-hover-text: #fdfcf9;
+}
+
+.skill-gray {
+  color: #766a5e;
+  border-color: #9d8f7f;
+  --skill-hover-bg: #9d8f7f;
+  --skill-hover-text: #fdfcf9;
+}
+
+@media (hover: hover) {
+  .portfolio-skill-badge:hover {
+    background-color: var(--skill-hover-bg);
+    color: var(--skill-hover-text);
+    transform: translateY(-2px);
+    box-shadow: 3px 4px 0 rgba(42, 37, 32, 0.1);
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio-skill-badge {
+    padding: 11px 15px;
+    min-height: 44px;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-skill-badge {
+    transition: none;
+  }
+}

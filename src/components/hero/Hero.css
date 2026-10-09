@@ -1,0 +1,696 @@
+
+/* ==========================================
+   HERO — DESIGN TOKENS
+   ========================================== */
+
+.portfolio-hero {
+  --hero-background: #f5f1ea;
+  --hero-paper: #fdfcf9;
+  --hero-burgundy: #8b4545;
+  --hero-ink: #2a2520;
+  --hero-muted: #5a5047;
+  --hero-border: #e8e4dd;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 112px 32px 64px;
+  background-color: #f5f1ea;
+  color: #2a2520;
+  overflow: hidden;
+}
+
+/* Original grain texture */
+
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ==========================================
+   DESKTOP GRID
+   ========================================== */
+
+.hero-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+  grid-template-areas:
+    "intro photo"
+    "live  photo";
+  column-gap: 64px;
+  row-gap: 0;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero-introduction {
+  grid-area: intro;
+  min-width: 0;
+  width: 100%;
+  align-self: end;
+  text-align: left;
+}
+
+.hero-photo-container {
+  grid-area: photo;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-live-container {
+  grid-area: live;
+  min-width: 0;
+  width: 100%;
+  align-self: start;
+  margin-top: 36px;
+}
+
+/* ==========================================
+   INTRODUCTION
+   ========================================== */
+
+.hero-greeting {
+  font-family: var(--font-mono, monospace);
+  color: var(--hero-burgundy);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+  margin: 0 0 22px;
+}
+
+.hero-name {
+  font-family: var(--font-mono, monospace);
+  font-weight: 900;
+  font-size: clamp(40px, 3.5vw, 58px);
+  line-height: 1.08;
+  letter-spacing: 0;
+  color: var(--hero-ink);
+  margin: 0 0 28px;
+  overflow-wrap: normal;
+}
+
+.hero-first-name,
+.hero-last-name {
+  display: inline;
+}
+
+.hero-role {
+  font-family: var(--font-mono, monospace);
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--hero-muted);
+  margin: 0 0 28px;
+}
+
+.hero-description {
+  font-family: var(--font-mono, monospace);
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 400;
+  color: var(--hero-muted);
+  max-width: 610px;
+  margin: 0 0 28px;
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+
+.hero-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  box-sizing: border-box;
+  padding: 18px 36px;
+  border: 2px solid var(--hero-burgundy);
+  border-radius: 0;
+  font-family: var(--font-mono, monospace);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.hero-button-primary {
+  background-color: var(--hero-burgundy);
+  color: var(--hero-paper);
+  box-shadow: 4px 4px 0 rgba(42, 37, 32, 0.15);
+}
+
+.hero-button-secondary {
+  background-color: var(--hero-paper);
+  color: var(--hero-burgundy);
+  box-shadow: 4px 4px 0 rgba(139, 69, 69, 0.2);
+}
+
+@media (hover: hover) {
+  .hero-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(42, 37, 32, 0.2);
+  }
+}
+
+.hero-button:focus-visible,
+.hero-live-link:focus-visible {
+  outline: 3px solid var(--hero-burgundy);
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   POLAROID
+   ========================================== */
+
+.hero-polaroid {
+  width: 100%;
+  max-width: 570px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 18px 18px 16px;
+  border: 0;
+  background-color: var(--hero-paper);
+  box-shadow: 8px 12px 30px rgba(42, 37, 32, 0.2);
+  transform: rotate(-5deg);
+  transition: transform 1.2s
+    cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-polaroid-ready {
+  transform: rotate(-2deg);
+}
+
+.hero-photo-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: #e8e4dd;
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-photo-caption {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  color: var(--hero-burgundy);
+  text-align: center;
+  margin: 14px 0 0;
+  padding: 0 4px;
+}
+
+
+/* ==========================================
+   LIVE LINK — INTERACTIVE ENHANCEMENT
+   ========================================== */
+
+.hero-live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 64px;
+  padding: 16px 18px;
+  border: 1px solid transparent;
+  border-top-color: #e8e4dd;
+  background-color: transparent;
+  text-decoration: none;
+  opacity: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-live-label {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.hero-live-text {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.hero-live-arrow {
+  flex-shrink: 0;
+  color: #8b4545;
+  transition: transform 0.25s ease;
+}
+
+@media (hover: hover) {
+  .hero-live-link:hover {
+    background-color: rgba(139, 69, 69, 0.07);
+    border-color: rgba(139, 69, 69, 0.25);
+    box-shadow: 4px 4px 0 rgba(139, 69, 69, 0.08);
+  }
+
+  .hero-live-link:hover .hero-live-arrow {
+    transform: translate(4px, -4px);
+  }
+}
+
+.hero-live-link:focus-visible {
+  outline: 3px solid #8b4545;
+  outline-offset: 4px;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-live-label {
+    font-size: 16px;
+  }
+
+  .hero-live-text {
+    font-size: 16px;
+  }
+
+  .hero-live-arrow {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero-live-link {
+    display: flex;
+    width: 100%;
+    min-height: 64px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 14px 10px;
+    border: 1px solid #e8e4dd;
+    background-color: rgba(139, 69, 69, 0.035);
+  }
+
+  .hero-live-label {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+
+  .hero-live-text {
+    font-size: clamp(13px, 3.7vw, 16px);
+    line-height: 1.4;
+  }
+
+  .hero-live-arrow {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+/* Accessible reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-live-arrow {
+    transition: none;
+  }
+}
+
+
+/* ==========================================
+   TABLET: 768px - 1023px
+   ========================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-layout {
+    column-gap: 32px;
+  }
+
+  .hero-name {
+    font-size: clamp(30px, 4vw, 42px);
+  }
+
+  .hero-role {
+    font-size: 17px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-button {
+    padding: 14px 22px;
+    min-height: 54px;
+  }
+
+  .hero-live-label,
+  .hero-live-text {
+    font-size: 15px;
+  }
+}
+
+/* ==========================================
+   MOBILE: BELOW 768px
+   ========================================== */
+
+@media (max-width: 767px) {
+  .portfolio-hero {
+    min-height: auto;
+    display: block;
+    padding: 112px 16px 48px;
+  }
+
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "intro"
+      "photo"
+      "live";
+    row-gap: 0;
+    max-width: 440px;
+    justify-items: center;
+  }
+
+  .hero-introduction {
+    width: 100%;
+    text-align: center;
+    align-self: auto;
+  }
+
+  .hero-greeting {
+    margin-bottom: 18px;
+  }
+
+  .hero-name {
+    font-size: clamp(29px, 8vw, 40px);
+    line-height: 1.12;
+    margin-bottom: 22px;
+  }
+
+  .hero-first-name,
+  .hero-last-name {
+    display: block;
+  }
+
+  .hero-role {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.75;
+    max-width: 380px;
+    margin: 0 auto 28px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .hero-button {
+    width: 100%;
+    min-height: 54px;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  .hero-photo-container {
+    width: 100%;
+    max-width: 330px;
+    margin-top: 44px;
+  }
+
+  .hero-polaroid {
+    padding: 12px 12px 16px;
+  }
+
+  .hero-photo-caption {
+    margin-top: 14px;
+    font-size: 11px;
+    padding-bottom: 2px;
+  }
+
+  .hero-live-container {
+    width: 100%;
+    margin-top: 32px;
+    text-align: center;
+  }
+
+  .hero-live-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .hero-live-label {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .hero-live-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+
+/* ==========================================
+   LIVE LINK — FINAL STYLING
+   ========================================== */
+
+.hero-live-container {
+  width: 100%;
+  min-width: 0;
+  margin-top: 36px;
+}
+
+.hero-live-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 76px;
+  box-sizing: border-box;
+
+  padding: 18px 16px;
+
+  background-color: rgba(139, 69, 69, 0.055);
+  border: 1px solid rgba(139, 69, 69, 0.18);
+
+  color: #2a2520;
+  text-decoration: none;
+  opacity: 1;
+  cursor: pointer;
+
+  box-shadow: 4px 5px 0 rgba(42, 37, 32, 0.045);
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Red pulsing indicator */
+
+.hero-live-indicator {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+.hero-live-dot {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #8b4545;
+}
+
+.hero-live-pulse {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border-radius: 50%;
+  background-color: #8b4545;
+  pointer-events: none;
+  animation: hero-ping 1.5s ease-out infinite;
+}
+
+/* Text */
+
+.hero-live-label {
+  font-family: var(--font-mono);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #8b4545;
+  white-space: nowrap;
+}
+
+.hero-live-text {
+  font-family: var(--font-mono);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #2a2520;
+}
+
+/* Arrow */
+
+.hero-live-arrow {
+  width: 22px;
+  height: 22px;
+  color: #8b4545;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+@media (hover: hover) {
+  .hero-live-link:hover {
+    background-color: rgba(139, 69, 69, 0.10);
+    border-color: rgba(139, 69, 69, 0.35);
+    box-shadow: 5px 7px 0 rgba(42, 37, 32, 0.09);
+    transform: translateY(-2px);
+  }
+
+  .hero-live-link:hover .hero-live-arrow {
+    transform: translate(3px, -3px);
+  }
+}
+
+.hero-live-link:focus-visible {
+  outline: 3px solid #8b4545;
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   MOBILE PLACEMENT
+   ========================================== */
+
+@media (max-width: 767px) {
+  .hero-live-container {
+    width: 100%;
+    max-width: 330px;
+    justify-self: center;
+    margin-top: 72px;
+    margin-bottom: 12px;
+  }
+
+  .hero-live-link {
+    min-height: 72px;
+    padding: 14px 12px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .hero-live-label {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .hero-live-text {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .hero-live-arrow {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hero-live-indicator {
+    width: 12px;
+    height: 12px;
+    flex-basis: 12px;
+  }
+
+  .hero-live-dot {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-live-link,
+  .hero-live-arrow {
+    transition: none;
+  }
+}
+
+@keyframes hero-ping {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.65;
+  }
+
+  70% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}

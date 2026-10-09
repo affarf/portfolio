@@ -1,0 +1,52 @@
+/* Honors section: independent styles, no global overrides */
+.portfolio-honors {
+  background: #f5f1ea;
+  color: #2a2520;
+  padding: 64px 16px 80px;
+  scroll-margin-top: 76px;
+}
+.honors-inner { width: 100%; max-width: 1152px; margin: 0 auto; }
+.honors-header { text-align: center; margin-bottom: 42px; }
+.honors-header h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 900;
+  line-height: 1.15;
+}
+.honors-header p {
+  margin: 0;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  letter-spacing: .15em;
+  color: #8b4545;
+}
+.honors-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.honors-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background: #fdfcf9;
+  border: 2px solid #e8e4dd;
+  box-shadow: 6px 8px 16px rgba(42, 37, 32, .07);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.honors-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+.honors-icon { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; color: #8b4545; border: 1px solid rgba(139,69,69,.35); flex-shrink: 0; }
+.honors-date { font: 500 12px/1.5 var(--font-mono, monospace); color: #8b4545; text-align: right; }
+.honors-card-title { margin: 0 0 8px; font: 800 22px/1.3 var(--font-serif, Georgia, serif); overflow-wrap: anywhere; }
+.honors-issuer { margin: 0 0 16px; font: 600 12px/1.55 var(--font-mono, monospace); color: #8b4545; }
+.honors-description { margin: 0; font: 400 14px/1.75 var(--font-mono, monospace); color: #5a5047; }
+@media (hover: hover) {
+  .honors-card:hover { transform: translateY(-3px); box-shadow: 8px 12px 22px rgba(42,37,32,.12); }
+}
+@media (max-width: 767px) {
+  .portfolio-honors { padding: 48px 16px 64px; }
+  .honors-header { margin-bottom: 28px; }
+  .honors-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .honors-card { padding: 24px 20px; }
+  .honors-card-title { font-size: 21px; }
+  .honors-description { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) { .honors-card { transition: none; } }

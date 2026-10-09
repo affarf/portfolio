@@ -8,7 +8,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Now from './components/Now';
-import Zine from './components/Zine';
+import Honors from './components/Honors';
 
 export default function App() {
 
@@ -25,6 +25,7 @@ export default function App() {
                 <main>
                   <Hero />
                   <About />
+                  <Honors />
                   <Projects />
                   <Contact />
                 </main>
