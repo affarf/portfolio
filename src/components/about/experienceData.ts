@@ -3,6 +3,23 @@ import education from '../../assets/uw-madison.png';
 import iss from '../../assets/iss.jpg';
 import fp_m from '../../assets/fp&m.png';
 import mysa from '../../assets/mysa.png';
+import issabAndrea from '../../assets/issab_andrea.jpg';
+import mysaNight from '../../assets/mysa_night.jpeg';
+import lab from '../../assets/lab.jpeg'
+
+import fieldHockey from '../../assets/field_hockey.jpg';
+import festifyTeam from '../../assets/festify_team.jpg';
+import campRandall from '../../assets/camp_randall.jpg';
+import ipmMentors from '../../assets/ipm_mentors.jpg';
+import peopleRobotsLab from '../../assets/people_robots_lab.jpg';
+import fpmDesk from '../../assets/fp_m_desk.jpg';
+import housingSupervisor from '../../assets/housing_supervisor.jpeg';
+
+export type ExperiencePhoto = {
+  src: string;
+  caption: string;
+  alt: string;
+};
 
 export type Experience = {
   id: string;
@@ -13,7 +30,7 @@ export type Experience = {
   logo: string;
   description?: string;
   highlights: string[];
-  photos?: string[];
+  photos?: ExperiencePhoto[];
 };
 
 export const experiences: Experience[] = [
@@ -27,8 +44,13 @@ export const experiences: Experience[] = [
     description: 'CGPA: 3.92/4.0',
     highlights: [
       'Coursework in algorithms, artificial intelligence, big data systems, data modeling, machine organization, statistics, and user interface design',
-      'Built full-stack applications,projects, and machine learning models using Java, Python, JavaScript, R, and Kotlin',
+      'Built full-stack applications, projects, and machine learning models using Java, Python, JavaScript, R, and Kotlin',
       'Goalkeeper for the Wisconsin Club Field Hockey Team, including a national tournament in Virginia',
+    ],
+    photos: [
+      { src: fieldHockey, caption: 'Between classes and the field hockey pitch', alt: 'Field hockey goalkeeper portrait wearing a Wisconsin jersey and equipment' },
+      { src: festifyTeam, caption: 'Presenting Festify with the project team', alt: 'Student project team standing beside their Festify presentation' },
+      { src: campRandall, caption: 'A night at Camp Randall', alt: 'Wisconsin football game at Camp Randall Stadium at night' },
     ],
   },
   {
@@ -44,6 +66,9 @@ export const experiences: Experience[] = [
       'Explore a secure RAG-powered knowledge base on Google Cloud Platform to improve access to departmental documents',
       'Benchmark custodial and maintenance performance using APPA standards to inform staffing and operational decisions',
     ],
+    photos: [
+      { src: fpmDesk, caption: 'A little corner of my FP&M workspace', alt: 'Personal desk and monitor at the Facilities Planning and Management office' },
+    ],
   },
   {
     id: 'pair-lab',
@@ -51,11 +76,14 @@ export const experiences: Experience[] = [
     organization: 'People and Robots Laboratory, UW–Madison',
     location: 'Madison, WI',
     date: 'March 2026 – Present',
-    logo: education, // Replace with a lab-specific logo when available
+    logo: lab,
     highlights: [
       'Contribute to human–robot interaction research using the Temi robot under Dr. Bilge Mutlu and Jungeun Lim',
       'Help develop, configure, and test robot behavior for research prototypes and experimental workflows',
       'Collaborate in an interdisciplinary lab studying how people interact with robotic systems',
+    ],
+    photos: [
+      { src: peopleRobotsLab, caption: 'Inside the People and Robots Lab', alt: 'Robotics research laboratory workspace with monitors and equipment' },
     ],
   },
   {
@@ -69,6 +97,9 @@ export const experiences: Experience[] = [
       'Supervise and train approximately 10 student custodians across Cole, Sullivan, and Aldo Leopold residence halls',
       'Manage shift schedules, coverage, task assignments, and records to keep daily operations running smoothly',
       'Coordinate maintenance requests and event preparations while supporting staff through training and problem-solving',
+    ],
+    photos: [
+      { src: housingSupervisor, caption: 'On duty with University Housing Residence Hall Facilities', alt: 'A student supervisor working with custodians in a residence hall' },
     ],
   },
   {
@@ -84,6 +115,9 @@ export const experiences: Experience[] = [
       'Advocate for clearer information on CPT, OPT, internships, and campus support for F-1 students',
       'Help recruit new board members and coordinate outreach, building on service as a board member since May 2025',
     ],
+    photos: [
+      { src: issabAndrea, caption: 'A moment from my ISSAB journey', alt: 'ISSAB recognition and student leadership memory' },
+    ],
   },
   {
     id: 'ipm',
@@ -97,6 +131,9 @@ export const experiences: Experience[] = [
       'Offer one-on-one guidance on campus resources, student organizations, and academic expectations',
       'Help mentees navigate cultural transitions and connect with support services and campus communities',
     ],
+    photos: [
+      { src: ipmMentors, caption: 'Good company with fellow international mentors', alt: 'A group of four friends and student mentors by the lakeshore at sunset' },
+    ],
   },
   {
     id: 'mysa',
@@ -109,6 +146,9 @@ export const experiences: Experience[] = [
       'Led venue, technical, and event logistics for Malaysian Cultural Night Theatre 2025',
       'Coordinated vendors, lighting, sound, stage equipment, and scheduling for cultural events',
       'Directed approximately 15 volunteers and worked with student leaders to resolve event-day challenges',
+    ],
+    photos: [
+      { src: mysaNight, caption: 'Behind the scenes at Malaysian Cultural Night', alt: 'Event organizer at Malaysian Cultural Night during backstage operations' },
     ],
   },
 ];
