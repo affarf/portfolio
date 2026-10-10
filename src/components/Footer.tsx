@@ -6,6 +6,7 @@ const footerLinks = [
   { label: 'HOME', section: 'home' },
   { label: 'ABOUT', section: 'about' },
   { label: 'PROJECTS', section: 'projects' },
+  { label: 'HONORS', section: 'honors' },
   { label: 'CONTACT', section: 'contact' },
 ] as const;
 
