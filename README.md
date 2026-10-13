@@ -32,8 +32,8 @@ A modern, responsive portfolio website built with **React.js** and **Tailwind CS
 
 - **Education**: B.Sc. in Computer Science, UW-Madison (CGPA: 3.89/4.0, Expected May 2027)  
 - **Work**: Facilities Student Supervisor, UW Housing  
-- **Leadership**: Logistics Director, Malaysian Student Association; ISS Advisor  
-- **Sports**: Field Hockey Goalkeeper, competed nationally in Virginia  
+- **Leadership**: Logistics Director, Malaysian Student Association; ISS Advisory Board  
+- **Sports**: Field Hockey Goalkeeper
 
 ---
 
