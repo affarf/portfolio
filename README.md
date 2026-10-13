@@ -1,41 +1,23 @@
-
 # Personal Portfolio Website
 
-A modern, responsive portfolio website built with **React.js** and **Tailwind CSS** to showcase my projects, skills, and experience in computer science and full-stack development.
+My personal portfolio website showcasing my projects, technical skills, professional experience, and interests.
 
----
+Built with **React, TypeScript, Tailwind CSS, and Vite**, featuring a responsive design and an editorial-inspired aesthetic.
+
+**[View Live Portfolio](https://affarf.github.io/portfolio/)**
 
 ## Features
 
-- **Responsive Design**: Works on desktop and mobile.
-- **Hero Section**: Personal introduction with photo and catchy welcome.
-- **About Me**: Education, work experience, leadership roles, and sports involvement.
-- **Projects**: Highlights my key projects with GitHub links and tech stack.
-- **Interactive UI**: Smooth animations, gradient highlights, and hover effects.
+- Responsive layouts for desktop and mobile
+- Projects and detailed case studies
+- Education, work experience, and leadership
+- Honors and awards
+- Interactive photo galleries and animations
+- A "Now" page featuring my current interests and activities
 
----
+## Tech Stack
 
-## Projects
-
-1. **UW-Housing Call in Sick App** – Full-stack app automating sick leave notifications.  
-   [GitHub](https://github.com/affarf/call_in_sick)
-
-2. **Portfolio Website** – Personal portfolio with smooth animations.  
-   [Live](https://affarf.github.io/portfolio/) | [GitHub](https://github.com/affarf/portfolio)
-
-3. **Festify (In Progress)** – Mobile app simplifying event management.  
-   [GitHub](https://github.com/ipanropi/portfolio)
-
----
-
-## About Me
-
-- **Education**: B.Sc. in Computer Science, UW-Madison (CGPA: 3.89/4.0, Expected May 2027)  
-- **Work**: Facilities Student Supervisor, UW Housing  
-- **Leadership**: Logistics Director, Malaysian Student Association; ISS Advisory Board  
-- **Sports**: Field Hockey Goalkeeper
-
----
+React · TypeScript · Tailwind CSS · Vite · React Router
 
 ## Run Locally
 
@@ -43,5 +25,20 @@ A modern, responsive portfolio website built with **React.js** and **Tailwind CS
 git clone https://github.com/affarf/portfolio.git
 cd portfolio
 npm install
-npm start
+npm run dev
+```
 
+Open `http://localhost:3000/` in your browser
+
+## Deployment
+
+Deployed using GitHub Pages
+
+```bash
+npm run build
+npm run deploy
+```
+
+---
+
+© 2026 Afif Arifuddin
