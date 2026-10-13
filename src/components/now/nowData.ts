@@ -1,13 +1,13 @@
 
-import blonde from '../../assets/blonde.jpg';
-import dune from '../../assets/dune.png';
-import stardew from '../../assets/stardew_valley.jpg';
-import leadership from '../../assets/leadership.jpg';
-import sports from '../../assets/sports.jpg';
-import travel from '../../assets/travel.jpg';
-import career from '../../assets/career.jpg';
-import research from '../../assets/research.jpg';
-import together from '../../assets/together.jpg';
+import blonde from '../../assets/now/blonde.jpg';
+import dune from '../../assets/now/dune.png';
+import stardew from '../../assets/now/stardew_valley.jpg';
+import leadership from '../../assets/now/leadership.jpg';
+import sports from '../../assets/now/sports.jpg';
+import travel from '../../assets/now/travel.jpg';
+import career from '../../assets/now/career.jpg';
+import research from '../../assets/now/research.jpg';
+import together from '../../assets/now/together.jpg';
 
 export type NowCard = {
   id: string;

@@ -678,3 +678,196 @@
     transition: none !important;
   }
 }
+
+
+/* ==========================================
+   FEATURED PROJECT — CASE STUDY LINK
+   ========================================== */
+
+.portfolio-featured-case-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 46px;
+  padding: 12px 18px;
+
+  background-color: #8b4545;
+  border: 2px solid #8b4545;
+
+  color: #fdfcf9;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.portfolio-featured-case-link svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+@media (hover: hover) {
+  .portfolio-featured-case-link:hover {
+    background-color: #743838;
+    transform: translateY(-2px);
+    box-shadow: 4px 6px 12px rgba(139, 69, 69, 0.2);
+  }
+
+  .portfolio-featured-case-link:hover svg {
+    transform: translate(3px, -3px);
+  }
+}
+
+.portfolio-featured-case-link:focus-visible {
+  outline: 3px solid #8b4545;
+  outline-offset: 4px;
+}
+
+@media (max-width: 767px) {
+  .portfolio-featured-case-link {
+    width: 100%;
+    min-height: 48px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-featured-case-link,
+  .portfolio-featured-case-link svg {
+    transition: none;
+  }
+}
+
+
+/* Featured project — prominent case study action */
+
+.portfolio-featured-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+}
+
+.portfolio-featured-footer-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.portfolio-featured-footer-year {
+  color: #8b4545;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.portfolio-featured-case-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: 100%;
+  min-height: 84px;
+  padding: 18px 22px;
+
+  background: #8b4545;
+  border: 2px solid #8b4545;
+  color: #fdfcf9;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.portfolio-featured-case-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  min-width: 0;
+  text-align: left;
+}
+
+.portfolio-featured-case-copy strong {
+  color: #fdfcf9;
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+.portfolio-featured-case-copy > span {
+  color: #f4dddd;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.portfolio-featured-case-link > svg {
+  flex-shrink: 0;
+  color: #fdfcf9;
+  transition: transform 0.25s ease;
+}
+
+@media (hover: hover) {
+  .portfolio-featured-case-link:hover {
+    background: #743838;
+    transform: translateY(-2px);
+    box-shadow: 5px 7px 0 rgba(139, 69, 69, 0.16);
+  }
+
+  .portfolio-featured-case-link:hover > svg {
+    transform: translate(4px, -4px);
+  }
+}
+
+.portfolio-featured-case-link:focus-visible {
+  outline: 3px solid #8b4545;
+  outline-offset: 4px;
+}
+
+@media (max-width: 767px) {
+  .portfolio-featured-case-link {
+    min-height: 80px;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .portfolio-featured-case-copy strong {
+    font-size: 12px;
+  }
+
+  .portfolio-featured-case-copy > span {
+    font-size: 10px;
+  }
+
+  .portfolio-featured-case-link > svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-featured-case-link,
+  .portfolio-featured-case-link > svg {
+    transition: none;
+  }
+}

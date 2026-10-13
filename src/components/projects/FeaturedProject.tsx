@@ -1,5 +1,12 @@
 
-import { ArrowUpRight, Layers, Smartphone, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import {
+  ArrowUpRight,
+  Layers,
+  Smartphone,
+  Users,
+} from 'lucide-react';
+
 import type { Project } from './projectData';
 
 interface FeaturedProjectProps {
@@ -11,7 +18,6 @@ export default function FeaturedProject({
 }: FeaturedProjectProps) {
   return (
     <article className="portfolio-featured-card">
-      {/* Project screenshot */}
       <div className="portfolio-featured-media">
         <img
           src={project.image}
@@ -25,7 +31,6 @@ export default function FeaturedProject({
         </span>
       </div>
 
-      {/* Project details */}
       <div className="portfolio-featured-content">
         <div className="portfolio-featured-topline">
           <span className="portfolio-featured-eyebrow">
@@ -95,16 +100,32 @@ export default function FeaturedProject({
           ))}
         </div>
 
-        <div className="portfolio-featured-footer">
-          <span className="portfolio-featured-role">
-            UI/UX DESIGN LEAD
-          </span>
+       
+<div className="portfolio-featured-footer">
+  <div className="portfolio-featured-footer-heading">
+    <span className="portfolio-featured-role">
+      UI/UX DESIGN LEAD
+    </span>
+    <span className="portfolio-featured-footer-year">
+      FEATURED WORK / 2026
+    </span>
+  </div>
 
-          <span className="portfolio-featured-coming-soon">
-            CASE STUDY IN PROGRESS
-            <ArrowUpRight size={15} aria-hidden="true" />
-          </span>
-        </div>
+  <Link
+    to="/projects/knowledgebase"
+    className="portfolio-featured-case-link"
+  >
+    <span className="portfolio-featured-case-copy">
+      <strong>EXPLORE THE FULL CASE STUDY</strong>
+      <span>
+        Before &amp; after · Mobile redesign · My process
+      </span>
+    </span>
+
+    <ArrowUpRight size={25} aria-hidden="true" />
+  </Link>
+</div>
+
       </div>
     </article>
   );

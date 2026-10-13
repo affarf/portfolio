@@ -1,19 +1,19 @@
-import housing from '../../assets/housing.jpg';
-import education from '../../assets/uw-madison.png';
-import iss from '../../assets/iss.jpg';
-import fp_m from '../../assets/fp&m.png';
-import mysa from '../../assets/mysa.png';
-import issabAndrea from '../../assets/issab_andrea.jpg';
-import mysaNight from '../../assets/mysa_night.jpeg';
-import lab from '../../assets/lab.jpeg'
+import housing from '../../assets/experiences/housing.jpg';
+import education from '../../assets/experiences/uw-madison.png';
+import iss from '../../assets/experiences/iss.jpg';
+import fp_m from '../../assets/experiences/fp&m.png';
+import mysa from '../../assets/experiences/mysa.png';
+import issabAndrea from '../../assets/experiences/issab_andrea.jpg';
+import mysaNight from '../../assets/experiences/mysa_night.jpeg';
+import lab from '../../assets/experiences/lab.jpeg'
 
-import fieldHockey from '../../assets/field_hockey.jpg';
+import fieldHockey from '../../assets/experiences/field_hockey.jpg';
 import festifyTeam from '../../assets/festify_team.jpg';
-import campRandall from '../../assets/camp_randall.jpg';
-import ipmMentors from '../../assets/ipm_mentors.jpg';
-import peopleRobotsLab from '../../assets/people_robots_lab.jpg';
-import fpmDesk from '../../assets/fp_m_desk.jpg';
-import housingSupervisor from '../../assets/housing_supervisor.jpeg';
+import campRandall from '../../assets/experiences/camp_randall.jpg';
+import ipmMentors from '../../assets/experiences/ipm_mentors.jpg';
+import peopleRobotsLab from '../../assets/experiences/people_robots_lab.jpg';
+import fpmDesk from '../../assets/experiences/fp_m_desk.jpg';
+import housingSupervisor from '../../assets/experiences/housing_supervisor.jpeg';
 
 export type ExperiencePhoto = {
   src: string;

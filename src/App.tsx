@@ -1,6 +1,6 @@
 
-import { useEffect } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,13 +10,14 @@ import Footer from './components/Footer';
 import Now from './components/Now';
 import Honors from './components/Honors';
 
+import KnowledgeBaseCaseStudy from './pages/KnowledgeBaseCaseStudy';
+
 export default function App() {
-
-
   return (
     <HashRouter>
-      <div className="min-h-screen bg-zinc-950">
+      <div className="min-h-screen bg-[#f5f1ea]">
         <Navbar />
+
         <Routes>
           <Route
             path="/"
@@ -33,7 +34,20 @@ export default function App() {
               </>
             }
           />
+
           <Route path="/now" element={<Now />} />
+
+          <Route
+            path="/projects/knowledgebase"
+            element={
+              <>
+                <main>
+                  <KnowledgeBaseCaseStudy />
+                </main>
+                <Footer />
+              </>
+            }
+          />
         </Routes>
       </div>
     </HashRouter>

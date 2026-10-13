@@ -2,7 +2,7 @@
 import callInImage from '../../assets/call_in.png';
 import portfolioImage from '../../assets/portfolio.png';
 import festifyImage from '../../assets/festify.jpg';
-import knowledgebaseImage from '../../assets/knowledgebaseImage.png';
+import knowledgebaseImage from '../../assets/knowledgebase/knowledgebaseImage.png';
 
 export type Project = {
   id: string;
