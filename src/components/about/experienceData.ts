@@ -65,6 +65,7 @@ export const experiences: Experience[] = [
       'Manage asset data in AiM AssetWorks and help develop a Custodial Services database to track labor hours, cleaning standards, and resources',
       'Explore a secure RAG-powered knowledge base on Google Cloud Platform to improve access to departmental documents',
       'Benchmark custodial and maintenance performance using APPA standards to inform staffing and operational decisions',
+      "Lead the ongoing UI/UX modernization of FP&M's KnowledgeBase, redesigning resource navigation, document layouts, and mobile interfaces to improve accessibility and information discovery",
     ],
     photos: [
       { src: fpmDesk, caption: 'A little corner of my FP&M workspace', alt: 'Personal desk and monitor at the Facilities Planning and Management office' },
