@@ -323,7 +323,6 @@ export default function FieldHockeyGame() {
           <h1>Beat the Keeper</h1>
 
           <p>
-            Five penalty strokes. One Wisconsin goalkeeper.
             Think you can score past me?
           </p>
         </header>

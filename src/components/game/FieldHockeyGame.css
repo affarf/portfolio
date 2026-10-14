@@ -836,3 +836,444 @@
     height: 58px;
   }
 }
+
+
+/* ==========================================
+   BEAT THE KEEPER — SINGLE SCREEN LAYOUT
+   Append to the BOTTOM of FieldHockeyGame.css
+   ========================================== */
+
+/* Tighten the area above the game */
+
+.hockey-game-page {
+  padding: 76px 20px 20px;
+}
+
+.hockey-game-container {
+  max-width: 1200px;
+}
+
+.hockey-game-header {
+  margin: 12px 0 14px;
+}
+
+.hockey-game-header h1 {
+  margin: 5px 0;
+  font-size: clamp(30px, 3.5vw, 46px);
+}
+
+.hockey-game-header > p:last-child {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.hockey-game-eyebrow {
+  font-size: 10px;
+}
+
+.hockey-game-back {
+  font-size: 10px;
+}
+
+.hockey-game-footnote {
+  margin-top: 12px;
+  font-size: 10px;
+}
+
+/* ==========================================
+   DESKTOP — PITCH + SIDE CONTROL PANEL
+   ========================================== */
+
+@media (min-width: 901px) {
+  .hockey-game-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 300px);
+    grid-template-areas:
+      "score score"
+      "pitch settings"
+      "pitch power"
+      "pitch message"
+      "pitch action";
+    grid-template-rows: auto auto 1fr auto auto;
+    gap: 12px 20px;
+    align-items: stretch;
+    padding: 18px;
+  }
+
+  .hockey-game-scoreboard {
+    grid-area: score;
+    padding: 0 0 12px;
+    border-bottom: 1px solid #e8e4dd;
+  }
+
+  .hockey-game-scoreboard strong {
+    font-size: 24px;
+  }
+
+  .hockey-game-settings {
+    grid-area: settings;
+    margin: 0;
+    padding: 13px;
+  }
+
+  /* Hide repeated keeper level;
+     difficulty selector already displays it */
+  .hockey-game-setting:last-child {
+    display: none;
+  }
+
+  .hockey-game-pitch {
+    grid-area: pitch;
+    height: clamp(320px, 56dvh, 490px);
+    min-width: 0;
+  }
+
+  .hockey-game-power {
+    grid-area: power;
+    padding: 14px 8px;
+    align-self: center;
+  }
+
+  .hockey-game-power-heading {
+    margin-bottom: 12px;
+  }
+
+  .hockey-game-power p {
+    margin-top: 10px;
+    font-size: 11px;
+  }
+
+  .hockey-game-message {
+    grid-area: message;
+    min-height: 65px;
+    padding: 5px;
+  }
+
+  .hockey-game-message strong {
+    font-size: 14px;
+  }
+
+  .hockey-game-message p {
+    font-size: 11px;
+  }
+
+  .hockey-game-next {
+    grid-area: action;
+    align-self: end;
+    min-height: 55px;
+  }
+}
+
+/* ==========================================
+   TABLET — STACKED BUT COMPACT
+   ========================================== */
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .hockey-game-card {
+    padding: 16px;
+  }
+
+  .hockey-game-pitch {
+    height: clamp(280px, 42dvh, 380px);
+  }
+
+  .hockey-game-settings {
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+
+  .hockey-game-power {
+    padding-top: 16px;
+  }
+
+  .hockey-game-message {
+    min-height: 70px;
+    padding: 8px;
+  }
+}
+
+/* ==========================================
+   MOBILE — COMPACT PORTRAIT GAME
+   ========================================== */
+
+@media (max-width: 767px) {
+  .hockey-game-page {
+    padding: 68px 10px 12px;
+  }
+
+  .hockey-game-back {
+    font-size: 9px;
+  }
+
+  .hockey-game-header {
+    margin: 8px 0 10px;
+  }
+
+  .hockey-game-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .hockey-game-header h1 {
+    margin: 3px 0;
+    font-size: clamp(26px, 7.5vw, 36px);
+  }
+
+  .hockey-game-header > p:last-child {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .hockey-game-card {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 10px;
+  }
+
+  /* Small horizontal scoreboard */
+
+  .hockey-game-scoreboard {
+    gap: 4px;
+    padding: 3px 0 8px;
+  }
+
+  .hockey-game-scoreboard > div {
+    gap: 2px;
+  }
+
+  .hockey-game-scoreboard span {
+    font-size: 8px;
+  }
+
+  .hockey-game-scoreboard strong {
+    font-size: 19px;
+  }
+
+  /* Single-line difficulty selection */
+
+  .hockey-game-settings {
+    padding: 7px 10px;
+    margin: 0;
+    min-height: 42px;
+  }
+
+  .hockey-game-setting:first-child {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hockey-game-setting label {
+    font-size: 9px;
+    white-space: nowrap;
+  }
+
+  .hockey-game-setting select {
+    flex: 1;
+    min-width: 0;
+    min-height: 30px;
+    font-size: 10px;
+  }
+
+  .hockey-game-setting:last-child {
+    display: none;
+  }
+
+  /* Main playing area */
+
+  .hockey-game-pitch {
+    flex: 0 0 auto;
+    height: clamp(190px, 29dvh, 280px);
+  }
+
+  .hockey-game-goal {
+    width: 86%;
+    height: 38%;
+  }
+
+  .hockey-game-photo-keeper {
+    width: 77px;
+    height: 105px;
+  }
+
+  .hockey-game-stroke-label {
+    font-size: 8px;
+  }
+
+  .hockey-game-circle span {
+    font-size: 7px;
+  }
+
+  .hockey-game-stick {
+    width: 29px;
+    height: 50px;
+    left: calc(50% + 25px);
+  }
+
+  .hockey-game-crosshair svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  /* Slimmer power meter */
+
+  .hockey-game-power {
+    padding: 5px 4px 0;
+  }
+
+  .hockey-game-power-heading {
+    margin: 0 0 9px;
+  }
+
+  .hockey-game-power-heading label {
+    font-size: 10px;
+  }
+
+  .hockey-game-power-heading strong {
+    font-size: 15px;
+  }
+
+  .hockey-game-power input[type="range"] {
+    height: 8px;
+  }
+
+  .hockey-game-power-labels {
+    margin-top: 10px;
+    font-size: 8px;
+  }
+
+  .hockey-game-power p {
+    display: none;
+  }
+
+  /* Result text */
+
+  .hockey-game-message {
+    min-height: 45px;
+    gap: 3px;
+    padding: 4px;
+  }
+
+  .hockey-game-message strong {
+    font-size: 13px;
+  }
+
+  .hockey-game-message p {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .hockey-game-message > svg {
+    display: none;
+  }
+
+  /* Always-visible shoot button */
+
+  .hockey-game-next {
+    flex-shrink: 0;
+    min-height: 46px;
+    padding: 9px;
+    font-size: 11px;
+  }
+
+  .hockey-game-footnote {
+    display: none;
+  }
+}
+
+/* ==========================================
+   VERY SHORT PHONE SCREENS
+   ========================================== */
+
+@media (max-width: 767px) and (max-height: 700px) {
+  .hockey-game-header > p:last-child {
+    display: none;
+  }
+
+  .hockey-game-header {
+    margin: 4px 0 6px;
+  }
+
+  .hockey-game-pitch {
+    height: clamp(170px, 26dvh, 220px);
+  }
+
+  .hockey-game-scoreboard {
+    padding-bottom: 4px;
+  }
+
+  .hockey-game-settings {
+    padding: 5px 8px;
+  }
+
+  .hockey-game-power-labels {
+    display: none;
+  }
+
+  .hockey-game-message {
+    min-height: 36px;
+  }
+
+  .hockey-game-next {
+    min-height: 42px;
+  }
+}
+
+
+/* ==========================================
+   GAME PAGE — VERTICAL SPACING
+   ========================================== */
+
+/* More space between title and game */
+.hockey-game-header {
+  margin-top: 24px;
+  margin-bottom: 34px;
+}
+
+/* Space between title and subtitle */
+.hockey-game-header h1 {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+/* Keep subtitle centered */
+.hockey-game-header > p:last-child {
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* More breathing room after the game */
+.hockey-game-footnote {
+  margin-top: 34px;
+  margin-bottom: 32px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Mobile — tighter spacing to avoid scrolling */
+@media (max-width: 767px) {
+  .hockey-game-header {
+    margin-top: 12px;
+    margin-bottom: 16px;
+  }
+
+  .hockey-game-header h1 {
+    margin-top: 5px;
+    margin-bottom: 7px;
+  }
+
+  .hockey-game-header > p:last-child {
+    line-height: 1.4;
+  }
+
+  .hockey-game-footnote {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    font-size: 9px;
+    line-height: 1.5;
+  }
+}
+
