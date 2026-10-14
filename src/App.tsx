@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Now from './components/Now';
 import Honors from './components/Honors';
+import FieldHockeyGame from './pages/FieldHockeyGame';
 
 import KnowledgeBaseCaseStudy from './pages/KnowledgeBaseCaseStudy';
 
@@ -48,6 +49,17 @@ export default function App() {
               </>
             }
           />
+
+          <Route
+            path="/game"
+            element={
+              <>
+                <FieldHockeyGame />
+                <Footer />
+              </>
+            }
+          />
+          
         </Routes>
       </div>
     </HashRouter>
