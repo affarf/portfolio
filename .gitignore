@@ -2,17 +2,15 @@
 # Dependencies
 node_modules/
 
-# Build outputs
-dist/
+# Generated builds
 build/
+dist/
 
-# Vite cache
+# Cache
 .vite/
+.cache/
 
-# GitHub Pages cache
-node_modules/.cache/
-
-# macOS
+# macOS files
 .DS_Store
 **/.DS_Store
 
@@ -24,7 +22,6 @@ node_modules/.cache/
 # Logs
 *.log
 
-# Editor
-.vscode/*
-!.vscode/extensions.json
+# Editor files
+.vscode/
 .idea/
