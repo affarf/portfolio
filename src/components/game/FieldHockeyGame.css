@@ -1,27 +1,27 @@
 
 /* ==========================================
-   BEAT THE KEEPER — V3.2
+   BEAT THE KEEPER — V3.3
    ========================================== */
 
 .hockey-game-page {
   min-height: 100vh;
-  padding: 110px 20px 75px;
+  padding: 76px 20px 30px;
   background: #f5f1ea;
   color: #2a2520;
 }
 
 .hockey-game-container {
   width: 100%;
-  max-width: 950px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .hockey-game-back {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   color: #8b4545;
-  font: 700 12px var(--font-mono, monospace);
+  font: 700 10px var(--font-mono, monospace);
   text-decoration: none;
 }
 
@@ -32,19 +32,19 @@
 /* HEADER */
 
 .hockey-game-header {
-  margin: 40px 0 32px;
+  margin: 20px 0 30px;
   text-align: center;
 }
 
 .hockey-game-eyebrow {
   color: #8b4545;
-  font: 700 12px var(--font-mono, monospace);
+  font: 700 10px var(--font-mono, monospace);
   letter-spacing: 2px;
 }
 
 .hockey-game-header h1 {
-  margin: 15px 0;
-  font: 900 clamp(42px, 7vw, 72px)/1.1
+  margin: 9px 0 10px;
+  font: 900 clamp(32px, 4vw, 50px)/1.1
     var(--font-serif, Georgia, serif);
 }
 
@@ -52,57 +52,52 @@
   max-width: 560px;
   margin: 0 auto;
   color: #5a5047;
-  font: 14px/1.8 var(--font-mono, monospace);
+  font: 12px/1.7 var(--font-mono, monospace);
 }
 
 /* CARD */
 
 .hockey-game-card {
-  padding: 24px;
-  background: #fdfcf9;
+  padding: 18px;
   border: 2px solid #e8e4dd;
+  background: #fdfcf9;
   box-shadow: 8px 12px 24px rgba(42, 37, 32, 0.1);
 }
 
-/* ==========================================
-   SCOREBOARD
-   ========================================== */
+/* SCOREBOARD */
 
 .hockey-game-scoreboard {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  padding-bottom: 24px;
+  gap: 10px;
 }
 
 .hockey-game-scoreboard > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 5px;
 }
 
 .hockey-game-scoreboard span {
   color: #8b4545;
-  font: 700 11px var(--font-mono, monospace);
+  font: 700 10px var(--font-mono, monospace);
   letter-spacing: 1px;
 }
 
 .hockey-game-scoreboard strong {
-  font: 900 30px var(--font-serif, Georgia, serif);
+  color: #2a2520;
+  font: 900 25px var(--font-serif, Georgia, serif);
 }
 
-/* ==========================================
-   DIFFICULTY SETTINGS
-   ========================================== */
+/* SETTINGS */
 
 .hockey-game-settings {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  padding: 17px 20px;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
   border: 1px solid #e8e4dd;
   background: #f5f1ea;
 }
@@ -117,29 +112,29 @@
 .hockey-game-setting > span {
   color: #8b4545;
   font: 700 10px var(--font-mono, monospace);
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
 }
 
 .hockey-game-setting select {
-  min-height: 39px;
-  min-width: 180px;
+  min-width: 165px;
+  min-height: 38px;
   padding: 8px 10px;
   border: 1px solid #d6ccc1;
   border-radius: 0;
   background: #fdfcf9;
   color: #2a2520;
-  font: 700 12px var(--font-mono, monospace);
+  font: 700 11px var(--font-mono, monospace);
   cursor: pointer;
 }
 
 .hockey-game-setting select:disabled {
-  opacity: 0.65;
+  opacity: 0.7;
   cursor: not-allowed;
 }
 
 .hockey-game-setting strong {
-  font: 700 13px var(--font-mono, monospace);
   color: #2a2520;
+  font: 700 12px var(--font-mono, monospace);
 }
 
 /* ==========================================
@@ -150,7 +145,6 @@
   position: relative;
   width: 100%;
   height: 430px;
-  padding: 0;
   overflow: hidden;
   isolation: isolate;
   background: repeating-linear-gradient(
@@ -162,7 +156,7 @@
   );
 }
 
-/* The D */
+/* SHOOTING CIRCLE */
 
 .hockey-game-circle {
   position: absolute;
@@ -170,6 +164,7 @@
   left: 4%;
   width: 92%;
   height: 77%;
+  box-sizing: border-box;
   border: 3px solid rgba(255, 255, 255, 0.85);
   border-top: 0;
   border-radius: 0 0 50% 50%;
@@ -179,17 +174,17 @@
 
 .hockey-game-circle span {
   position: absolute;
-  bottom: 7%;
+  bottom: 4%;
   left: 50%;
   transform: translateX(-50%);
-  color: rgba(255, 255, 255, 0.5);
-  font: 700 11px var(--font-mono, monospace);
+  color: rgba(255, 255, 255, 0.55);
+  font: 700 10px var(--font-mono, monospace);
   letter-spacing: 2px;
   white-space: nowrap;
 }
 
 /* ==========================================
-   GOAL — CLICK TO AIM
+   GOAL AND NET
    ========================================== */
 
 .hockey-game-goal {
@@ -200,12 +195,12 @@
   height: 37%;
   padding: 0;
   transform: translateX(-50%);
+  box-sizing: border-box;
   border: 6px solid #fdfcf9;
   border-bottom-width: 8px;
   border-radius: 0;
-  box-sizing: border-box;
-  overflow: visible;
   background: #244a35;
+  overflow: visible;
   z-index: 3;
   appearance: none;
   color: inherit;
@@ -217,13 +212,8 @@
 }
 
 .hockey-game-goal:disabled {
-  cursor: default;
   opacity: 1;
-}
-
-.hockey-game-goal:focus-visible {
-  outline: 3px solid #e8c99a;
-  outline-offset: 5px;
+  cursor: default;
 }
 
 .hockey-game-net {
@@ -243,10 +233,6 @@
   pointer-events: none;
 }
 
-/* ==========================================
-   AIMING CROSSHAIR
-   ========================================== */
-
 .hockey-game-crosshair {
   position: absolute;
   display: grid;
@@ -260,12 +246,8 @@
   filter: drop-shadow(0 1px 3px #0009);
 }
 
-.hockey-game-goal--aiming:hover .hockey-game-crosshair {
-  color: #ffffff;
-}
-
 /* ==========================================
-   GOALKEEPER PHOTO
+   GOALKEEPER — VISUAL POSITION MATCHES LOGIC
    ========================================== */
 
 .hockey-game-photo-keeper {
@@ -277,8 +259,8 @@
   height: 195px;
   transform: translateX(-50%);
   transform-origin: center bottom;
-  pointer-events: none;
   z-index: 5;
+  pointer-events: none;
 }
 
 .hockey-game-photo-keeper img {
@@ -290,39 +272,31 @@
   user-select: none;
 }
 
-/*
-   The goalkeeper moves toward the predicted
-   shot location, with a difficulty-dependent
-   reaction delay.
-*/
-
 .hockey-game-photo-keeper--moving {
-  left: var(--keeper-x);
-  transition:
-    left var(--keeper-duration) ease-out
-    var(--keeper-delay),
-    transform 0.45s ease-out
-    var(--keeper-delay);
+  animation:
+    hockey-keeper-move
+    var(--keeper-duration)
+    ease-out
+    var(--keeper-delay)
+    both;
 }
 
-.hockey-game-photo-keeper--moving.hockey-game-photo-keeper--left {
-  transform: translateX(-50%) rotate(-13deg);
-}
+@keyframes hockey-keeper-move {
+  from {
+    left: 50%;
+    transform: translateX(-50%) rotate(0);
+  }
 
-.hockey-game-photo-keeper--moving.hockey-game-photo-keeper--right {
-  transform: translateX(-50%) rotate(13deg);
-}
-
-.hockey-game-photo-keeper--moving.hockey-game-photo-keeper--center {
-  transform: translateX(-50%) rotate(0);
-}
-
-.hockey-game-photo-keeper--moving.hockey-game-photo-keeper--high {
-  bottom: 10px;
+  to {
+    left: var(--keeper-x);
+    transform:
+      translateX(-50%)
+      rotate(var(--keeper-rotation));
+  }
 }
 
 /* ==========================================
-   PENALTY STROKE MARK AND BALL
+   PENALTY STROKE SPOT
    ========================================== */
 
 .hockey-game-stroke-mark {
@@ -354,65 +328,149 @@
 
 .hockey-game-stroke-label {
   position: absolute;
-  top: 75%;
+  top: 54%;
   left: 50%;
   transform: translateX(-50%);
-  color: rgba(255, 255, 255, 0.78);
-  font: 700 11px var(--font-mono, monospace);
-  letter-spacing: 1.3px;
+  color: rgba(255, 255, 255, 0.8);
+  font: 700 10px var(--font-mono, monospace);
+  letter-spacing: 1.2px;
   white-space: nowrap;
   z-index: 2;
 }
 
-/* Proper hooked stick */
+/* FIELD HOCKEY STICK */
 
 .hockey-game-stick {
   position: absolute;
-  top: 62%;
-  left: calc(50% + 18px);
-  width: 48px;
-  height: 82px;
+  top: 61%;
+  left: calc(50% + 48px);
+  width: 42px;
+  height: 75px;
   transform: rotate(-25deg);
-  transform-origin: center center;
   z-index: 6;
   pointer-events: none;
 }
 
 /* ==========================================
-   BALL FLIGHT
+   SHOT ANIMATION
+
+   The ball is now INSIDE the goal element.
+
+   Starting at top: 154% places it at
+   approximately 66% of the pitch height,
+   matching the penalty stroke spot.
    ========================================== */
 
 .hockey-game-flying-ball {
   position: absolute;
   left: 50%;
-  top: 66%;
+  top: 154%;
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #fff;
+  background: white;
   box-shadow:
     0 2px 5px rgba(0, 0, 0, 0.35),
     inset -2px -2px 3px rgba(0, 0, 0, 0.12);
-  z-index: 7;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  pointer-events: none;
+}
 
+/* Goal: ball travels all the way into the net */
+
+.hockey-game-flying-ball--goal {
   animation:
-    hockey-v3-ball-flight
+    hockey-shot-goal
     var(--flight-duration)
     cubic-bezier(0.35, 0.12, 0.78, 0.9)
     both;
 }
 
-@keyframes hockey-v3-ball-flight {
-  0% {
+@keyframes hockey-shot-goal {
+  from {
     left: 50%;
-    top: 66%;
+    top: 154%;
     transform: translate(-50%, -50%) scale(1);
   }
 
-  100% {
-    left: var(--ball-target-x);
-    top: var(--ball-target-y);
+  to {
+    left: var(--target-x);
+    top: var(--target-y);
     transform: translate(-50%, -50%) scale(0.65);
+  }
+}
+
+/*
+   Save: ball reaches the keeper's area
+   and deflects downward out of the goal.
+*/
+
+.hockey-game-flying-ball--save {
+  animation:
+    hockey-shot-save
+    var(--flight-duration)
+    ease-in-out
+    both;
+}
+
+@keyframes hockey-shot-save {
+  0% {
+    left: 50%;
+    top: 154%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  72% {
+    left: var(--target-x);
+    top: var(--target-y);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.75);
+  }
+
+  78% {
+    left: var(--target-x);
+    top: var(--target-y);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+
+  100% {
+    left: calc(var(--target-x) + var(--deflect-x));
+    top: calc(var(--target-y) + 65%);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+}
+
+/* Miss: ball travels outside the goal frame */
+
+.hockey-game-flying-ball--miss {
+  animation:
+    hockey-shot-miss
+    var(--flight-duration)
+    ease-in
+    both;
+}
+
+@keyframes hockey-shot-miss {
+  0% {
+    left: 50%;
+    top: 154%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    left: var(--target-x);
+    top: var(--target-y);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.55);
   }
 }
 
@@ -421,15 +479,15 @@
    ========================================== */
 
 .hockey-game-power {
-  padding: 25px 4px 8px;
+  padding: 18px 8px 8px;
 }
 
 .hockey-game-power-heading {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 13px;
 }
 
 .hockey-game-power-heading label {
@@ -437,7 +495,7 @@
   align-items: center;
   gap: 8px;
   color: #8b4545;
-  font: 700 12px var(--font-mono, monospace);
+  font: 700 11px var(--font-mono, monospace);
   letter-spacing: 1px;
 }
 
@@ -449,8 +507,9 @@
 .hockey-game-power input[type="range"] {
   display: block;
   width: 100%;
-  height: 12px;
+  height: 10px;
   margin: 0;
+  padding: 0;
   border: 0;
   border-radius: 10px;
   appearance: none;
@@ -466,8 +525,8 @@
 }
 
 .hockey-game-power input[type="range"]::-webkit-slider-thumb {
-  width: 23px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
   border: 3px solid #fdfcf9;
   border-radius: 50%;
   background: #8b4545;
@@ -485,11 +544,6 @@
   box-shadow: 0 0 0 2px #8b4545;
 }
 
-.hockey-game-power input[type="range"]:focus-visible {
-  outline: 3px solid #c4a856;
-  outline-offset: 6px;
-}
-
 .hockey-game-power input[type="range"]:disabled {
   opacity: 0.65;
   cursor: not-allowed;
@@ -499,20 +553,20 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  margin-top: 16px;
+  margin-top: 15px;
   color: #8b4545;
-  font: 700 10px var(--font-mono, monospace);
+  font: 700 9px var(--font-mono, monospace);
   letter-spacing: 1px;
 }
 
 .hockey-game-power p {
-  margin: 17px 0 0;
+  margin: 12px 0 0;
   color: #5a5047;
-  font: 12px/1.8 var(--font-mono, monospace);
+  font: 11px/1.8 var(--font-mono, monospace);
 }
 
 /* ==========================================
-   RESULT MESSAGE
+   STATUS / RESULT
    ========================================== */
 
 .hockey-game-message {
@@ -520,49 +574,46 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  min-height: 130px;
-  padding: 20px 12px;
+  gap: 7px;
+  min-height: 75px;
+  padding: 8px;
   text-align: center;
   font-family: var(--font-mono, monospace);
 }
 
 .hockey-game-message strong {
   color: #8b4545;
-  font-size: 18px;
+  font-size: 15px;
   letter-spacing: 1px;
 }
 
 .hockey-game-message p {
-  max-width: 500px;
   margin: 0;
   color: #5a5047;
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .hockey-game-message svg {
   color: #8b4545;
 }
 
-/* ==========================================
-   PLAY / NEXT SHOT / RESTART BUTTON
-   ========================================== */
+/* BUTTON */
 
 .hockey-game-next {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
-  min-height: 58px;
-  padding: 15px 20px;
+  min-height: 55px;
+  padding: 12px 16px;
   border: 2px solid #8b4545;
   border-radius: 0;
   background: #8b4545;
   color: #fdfcf9;
-  font: 800 13px var(--font-mono, monospace);
-  letter-spacing: 1px;
+  font: 800 12px var(--font-mono, monospace);
+  letter-spacing: 0.7px;
   cursor: pointer;
   transition:
     background 0.2s ease,
@@ -580,8 +631,10 @@
 }
 
 .hockey-game-next:focus-visible,
+.hockey-game-goal:focus-visible,
 .hockey-game-back:focus-visible,
-.hockey-game-setting select:focus-visible {
+.hockey-game-setting select:focus-visible,
+.hockey-game-power input:focus-visible {
   outline: 3px solid #c4a856;
   outline-offset: 3px;
 }
@@ -589,305 +642,22 @@
 /* FOOTNOTE */
 
 .hockey-game-footnote {
-  margin-top: 24px;
+  margin: 30px 0 28px;
   color: #5a5047;
   text-align: center;
-  font: 12px/1.8 var(--font-mono, monospace);
+  font: 11px/1.8 var(--font-mono, monospace);
 }
 
 /* ==========================================
-   TABLET
-   ========================================== */
-
-@media (max-width: 900px) {
-  .hockey-game-pitch {
-    height: 380px;
-  }
-
-  .hockey-game-photo-keeper {
-    width: 125px;
-    height: 175px;
-  }
-
-  .hockey-game-goal {
-    width: 82%;
-  }
-}
-
-/* ==========================================
-   MOBILE
-   ========================================== */
-
-@media (max-width: 767px) {
-  .hockey-game-page {
-    padding: 95px 14px 55px;
-  }
-
-  .hockey-game-header {
-    margin: 30px 0 26px;
-  }
-
-  .hockey-game-header h1 {
-    font-size: clamp(38px, 10vw, 54px);
-  }
-
-  .hockey-game-header > p:last-child {
-    font-size: 12px;
-  }
-
-  .hockey-game-card {
-    padding: 12px;
-  }
-
-  .hockey-game-scoreboard {
-    gap: 5px;
-    padding: 12px 0 20px;
-  }
-
-  .hockey-game-scoreboard span {
-    font-size: 9px;
-    letter-spacing: 0;
-  }
-
-  .hockey-game-scoreboard strong {
-    font-size: 23px;
-  }
-
-  .hockey-game-settings {
-    gap: 12px;
-    padding: 14px;
-    margin-bottom: 15px;
-  }
-
-  .hockey-game-setting select {
-    min-width: 135px;
-    font-size: 10px;
-  }
-
-  .hockey-game-setting strong {
-    font-size: 10px;
-  }
-
-  .hockey-game-pitch {
-    height: 320px;
-  }
-
-  .hockey-game-goal {
-    width: 84%;
-    height: 38%;
-    border-width: 4px;
-    border-bottom-width: 6px;
-  }
-
-  .hockey-game-circle {
-    left: 3%;
-    width: 94%;
-    height: 78%;
-    border-width: 2px;
-  }
-
-  .hockey-game-circle span {
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
-
-  .hockey-game-photo-keeper {
-    width: 96px;
-    height: 138px;
-  }
-
-  .hockey-game-crosshair {
-    width: 27px;
-    height: 27px;
-  }
-
-  .hockey-game-crosshair svg {
-    width: 23px;
-    height: 23px;
-  }
-
-  .hockey-game-stroke-label {
-    font-size: 9px;
-    letter-spacing: 0.5px;
-  }
-
-  .hockey-game-stick {
-    width: 38px;
-    height: 66px;
-    left: calc(50% + 14px);
-  }
-
-  .hockey-game-flying-ball,
-  .hockey-game-stationary-ball {
-    width: 14px;
-    height: 14px;
-  }
-
-  .hockey-game-power {
-    padding: 23px 8px 5px;
-  }
-
-  .hockey-game-power-labels {
-    font-size: 9px;
-  }
-
-  .hockey-game-message {
-    min-height: 118px;
-  }
-
-  .hockey-game-message strong {
-    font-size: 16px;
-  }
-
-  .hockey-game-next {
-    min-height: 52px;
-    font-size: 11px;
-  }
-}
-
-/* VERY SMALL PHONES */
-
-@media (max-width: 380px) {
-  .hockey-game-pitch {
-    height: 285px;
-  }
-
-  .hockey-game-photo-keeper {
-    width: 85px;
-    height: 122px;
-  }
-
-  .hockey-game-setting select {
-    min-width: 115px;
-  }
-
-  .hockey-game-stroke-label {
-    font-size: 8px;
-  }
-}
-
-/* ==========================================
-   REDUCED MOTION
-   ========================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  .hockey-game-flying-ball {
-    animation-duration: 0.01ms;
-  }
-
-  .hockey-game-photo-keeper--moving {
-    transition: none;
-  }
-
-  .hockey-game-next {
-    transition: none;
-  }
-}
-
-/* ==========================================
-   V3.2 — FIX PITCH LABEL OVERLAP
-   ========================================== */
-
-/* Move shooting circle label toward the bottom of the D */
-.hockey-game-circle span {
-  bottom: 4%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 10px;
-  opacity: 0.7;
-}
-
-/* Place penalty stroke label above the ball */
-.hockey-game-stroke-label {
-  top: 54%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 10px;
-  letter-spacing: 1.2px;
-  z-index: 2;
-}
-
-/* Move the hockey stick farther to the right of the ball */
-.hockey-game-stick {
-  top: 61%;
-  left: calc(50% + 48px);
-  width: 42px;
-  height: 75px;
-  transform: rotate(-25deg);
-}
-
-/* Mobile adjustments */
-@media (max-width: 767px) {
-  .hockey-game-circle span {
-    bottom: 4%;
-    font-size: 8px;
-  }
-
-  .hockey-game-stroke-label {
-    top: 53%;
-    font-size: 8px;
-    letter-spacing: 0.5px;
-  }
-
-  .hockey-game-stick {
-    top: 61%;
-    left: calc(50% + 28px);
-    width: 33px;
-    height: 58px;
-  }
-}
-
-
-/* ==========================================
-   BEAT THE KEEPER — SINGLE SCREEN LAYOUT
-   Append to the BOTTOM of FieldHockeyGame.css
-   ========================================== */
-
-/* Tighten the area above the game */
-
-.hockey-game-page {
-  padding: 76px 20px 20px;
-}
-
-.hockey-game-container {
-  max-width: 1200px;
-}
-
-.hockey-game-header {
-  margin: 12px 0 14px;
-}
-
-.hockey-game-header h1 {
-  margin: 5px 0;
-  font-size: clamp(30px, 3.5vw, 46px);
-}
-
-.hockey-game-header > p:last-child {
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-.hockey-game-eyebrow {
-  font-size: 10px;
-}
-
-.hockey-game-back {
-  font-size: 10px;
-}
-
-.hockey-game-footnote {
-  margin-top: 12px;
-  font-size: 10px;
-}
-
-/* ==========================================
-   DESKTOP — PITCH + SIDE CONTROL PANEL
+   DESKTOP — SIDE-BY-SIDE LAYOUT
    ========================================== */
 
 @media (min-width: 901px) {
   .hockey-game-card {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(250px, 300px);
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(250px, 300px);
     grid-template-areas:
       "score score"
       "pitch settings"
@@ -897,7 +667,6 @@
     grid-template-rows: auto auto 1fr auto auto;
     gap: 12px 20px;
     align-items: stretch;
-    padding: 18px;
   }
 
   .hockey-game-scoreboard {
@@ -906,18 +675,10 @@
     border-bottom: 1px solid #e8e4dd;
   }
 
-  .hockey-game-scoreboard strong {
-    font-size: 24px;
-  }
-
   .hockey-game-settings {
     grid-area: settings;
-    margin: 0;
-    padding: 13px;
   }
 
-  /* Hide repeated keeper level;
-     difficulty selector already displays it */
   .hockey-game-setting:last-child {
     display: none;
   }
@@ -930,83 +691,48 @@
 
   .hockey-game-power {
     grid-area: power;
-    padding: 14px 8px;
     align-self: center;
-  }
-
-  .hockey-game-power-heading {
-    margin-bottom: 12px;
-  }
-
-  .hockey-game-power p {
-    margin-top: 10px;
-    font-size: 11px;
   }
 
   .hockey-game-message {
     grid-area: message;
-    min-height: 65px;
-    padding: 5px;
-  }
-
-  .hockey-game-message strong {
-    font-size: 14px;
-  }
-
-  .hockey-game-message p {
-    font-size: 11px;
   }
 
   .hockey-game-next {
     grid-area: action;
     align-self: end;
-    min-height: 55px;
   }
 }
 
 /* ==========================================
-   TABLET — STACKED BUT COMPACT
+   TABLET
    ========================================== */
 
 @media (min-width: 768px) and (max-width: 900px) {
-  .hockey-game-card {
-    padding: 16px;
-  }
-
   .hockey-game-pitch {
-    height: clamp(280px, 42dvh, 380px);
+    height: clamp(300px, 43dvh, 390px);
   }
 
   .hockey-game-settings {
-    padding: 12px 16px;
-    margin-bottom: 12px;
+    margin: 12px 0;
   }
 
   .hockey-game-power {
-    padding-top: 16px;
-  }
-
-  .hockey-game-message {
-    min-height: 70px;
-    padding: 8px;
+    padding-top: 20px;
   }
 }
 
 /* ==========================================
-   MOBILE — COMPACT PORTRAIT GAME
+   MOBILE — COMPACT PLAYABLE LAYOUT
    ========================================== */
 
 @media (max-width: 767px) {
   .hockey-game-page {
-    padding: 68px 10px 12px;
-  }
-
-  .hockey-game-back {
-    font-size: 9px;
+    padding: 68px 10px 14px;
   }
 
   .hockey-game-header {
-    margin: 8px 0 10px;
+    margin: 12px 0 16px;
   }
 
   .hockey-game-eyebrow {
@@ -1015,13 +741,13 @@
   }
 
   .hockey-game-header h1 {
-    margin: 3px 0;
-    font-size: clamp(26px, 7.5vw, 36px);
+    margin: 5px 0 7px;
+    font-size: clamp(27px, 8vw, 38px);
   }
 
   .hockey-game-header > p:last-child {
     font-size: 10px;
-    line-height: 1.35;
+    line-height: 1.4;
   }
 
   .hockey-game-card {
@@ -1030,8 +756,6 @@
     gap: 7px;
     padding: 10px;
   }
-
-  /* Small horizontal scoreboard */
 
   .hockey-game-scoreboard {
     gap: 4px;
@@ -1044,18 +768,17 @@
 
   .hockey-game-scoreboard span {
     font-size: 8px;
+    letter-spacing: 0;
   }
 
   .hockey-game-scoreboard strong {
     font-size: 19px;
   }
 
-  /* Single-line difficulty selection */
-
   .hockey-game-settings {
-    padding: 7px 10px;
-    margin: 0;
     min-height: 42px;
+    margin: 0;
+    padding: 7px 10px;
   }
 
   .hockey-game-setting:first-child {
@@ -1081,8 +804,6 @@
     display: none;
   }
 
-  /* Main playing area */
-
   .hockey-game-pitch {
     flex: 0 0 auto;
     height: clamp(190px, 29dvh, 280px);
@@ -1091,6 +812,20 @@
   .hockey-game-goal {
     width: 86%;
     height: 38%;
+    border-width: 4px;
+    border-bottom-width: 6px;
+  }
+
+  .hockey-game-circle {
+    left: 3%;
+    width: 94%;
+    height: 78%;
+    border-width: 2px;
+  }
+
+  .hockey-game-circle span {
+    font-size: 7px;
+    letter-spacing: 1px;
   }
 
   .hockey-game-photo-keeper {
@@ -1098,18 +833,9 @@
     height: 105px;
   }
 
-  .hockey-game-stroke-label {
-    font-size: 8px;
-  }
-
-  .hockey-game-circle span {
-    font-size: 7px;
-  }
-
-  .hockey-game-stick {
-    width: 29px;
-    height: 50px;
-    left: calc(50% + 25px);
+  .hockey-game-crosshair {
+    width: 27px;
+    height: 27px;
   }
 
   .hockey-game-crosshair svg {
@@ -1117,7 +843,77 @@
     height: 19px;
   }
 
-  /* Slimmer power meter */
+  .hockey-game-stroke-label {
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .hockey-game-stick {
+    top: 61%;
+    left: calc(50% + 28px);
+    width: 33px;
+    height: 58px;
+  }
+
+  .hockey-game-flying-ball,
+  .hockey-game-stationary-ball {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Goal height differs on mobile, so
+     adjust the ball's starting location. */
+  .hockey-game-flying-ball {
+    top: 150%;
+  }
+
+  @keyframes hockey-shot-goal {
+    from {
+      left: 50%;
+      top: 150%;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+      left: var(--target-x);
+      top: var(--target-y);
+      transform: translate(-50%, -50%) scale(0.65);
+    }
+  }
+
+  @keyframes hockey-shot-save {
+    0% {
+      left: 50%;
+      top: 150%;
+      opacity: 1;
+    }
+
+    72%, 78% {
+      left: var(--target-x);
+      top: var(--target-y);
+      opacity: 1;
+    }
+
+    100% {
+      left: calc(var(--target-x) + var(--deflect-x));
+      top: calc(var(--target-y) + 65%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes hockey-shot-miss {
+    from {
+      left: 50%;
+      top: 150%;
+      opacity: 1;
+    }
+
+    to {
+      left: var(--target-x);
+      top: var(--target-y);
+      opacity: 0;
+    }
+  }
 
   .hockey-game-power {
     padding: 5px 4px 0;
@@ -1148,8 +944,6 @@
     display: none;
   }
 
-  /* Result text */
-
   .hockey-game-message {
     min-height: 45px;
     gap: 3px;
@@ -1169,8 +963,6 @@
     display: none;
   }
 
-  /* Always-visible shoot button */
-
   .hockey-game-next {
     flex-shrink: 0;
     min-height: 46px;
@@ -1179,101 +971,47 @@
   }
 
   .hockey-game-footnote {
-    display: none;
+    display: block;
+    margin: 14px 0 12px;
+    font-size: 9px;
+    line-height: 1.5;
   }
 }
 
-/* ==========================================
-   VERY SHORT PHONE SCREENS
-   ========================================== */
+/* SHORT PHONES */
 
 @media (max-width: 767px) and (max-height: 700px) {
-  .hockey-game-header > p:last-child {
-    display: none;
-  }
-
   .hockey-game-header {
     margin: 4px 0 6px;
+  }
+
+  .hockey-game-header > p:last-child {
+    display: none;
   }
 
   .hockey-game-pitch {
     height: clamp(170px, 26dvh, 220px);
   }
 
-  .hockey-game-scoreboard {
-    padding-bottom: 4px;
-  }
-
-  .hockey-game-settings {
-    padding: 5px 8px;
-  }
-
   .hockey-game-power-labels {
     display: none;
   }
 
-  .hockey-game-message {
-    min-height: 36px;
+  .hockey-game-footnote {
+    margin-top: 8px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .hockey-game-flying-ball,
+  .hockey-game-photo-keeper--moving {
+    animation-duration: 0.01ms;
+    animation-delay: 0ms;
   }
 
   .hockey-game-next {
-    min-height: 42px;
+    transition: none;
   }
 }
-
-
-/* ==========================================
-   GAME PAGE — VERTICAL SPACING
-   ========================================== */
-
-/* More space between title and game */
-.hockey-game-header {
-  margin-top: 24px;
-  margin-bottom: 34px;
-}
-
-/* Space between title and subtitle */
-.hockey-game-header h1 {
-  margin-top: 10px;
-  margin-bottom: 12px;
-}
-
-/* Keep subtitle centered */
-.hockey-game-header > p:last-child {
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-/* More breathing room after the game */
-.hockey-game-footnote {
-  margin-top: 34px;
-  margin-bottom: 32px;
-  text-align: center;
-  line-height: 1.8;
-}
-
-/* Mobile — tighter spacing to avoid scrolling */
-@media (max-width: 767px) {
-  .hockey-game-header {
-    margin-top: 12px;
-    margin-bottom: 16px;
-  }
-
-  .hockey-game-header h1 {
-    margin-top: 5px;
-    margin-bottom: 7px;
-  }
-
-  .hockey-game-header > p:last-child {
-    line-height: 1.4;
-  }
-
-  .hockey-game-footnote {
-    display: block;
-    margin-top: 14px;
-    margin-bottom: 12px;
-    font-size: 9px;
-    line-height: 1.5;
-  }
-}
-
