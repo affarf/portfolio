@@ -525,3 +525,265 @@
     max-width: 100%;
   }
 }
+
+/* ======================================
+   NOW PAGE — BEAT THE KEEPER FEATURE
+   ====================================== */
+
+.now-hockey-game {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 50px auto;
+  overflow: hidden;
+  background: #fdfcf9;
+  border: 1px solid #e8e4dd;
+}
+
+.now-hockey-game-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(26px, 4vw, 48px);
+}
+
+.now-hockey-game-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #8b4545;
+  font: 700 11px var(--font-mono, monospace);
+  letter-spacing: 1.5px;
+}
+
+.now-hockey-game-content h2 {
+  max-width: 470px;
+  margin: 18px 0 14px;
+  color: #2a2520;
+  font: 700 clamp(27px, 3.6vw, 43px)/1.15
+    var(--font-serif, Georgia, serif);
+}
+
+.now-hockey-game-content p {
+  max-width: 430px;
+  margin: 0 0 26px;
+  color: #5a5047;
+  font: 14px/1.85 var(--font-mono, monospace);
+}
+
+.now-hockey-game-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 14px 20px;
+  background: #8b4545;
+  color: #fff;
+  font: 700 12px var(--font-mono, monospace);
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.now-hockey-game-link:hover {
+  background: #743838;
+  transform: translateY(-2px);
+}
+
+.now-hockey-game-visual {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 290px;
+  padding: 28px 20px 0;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+    0deg,
+    #326345 0,
+    #326345 40px,
+    #396f4b 40px,
+    #396f4b 80px
+  );
+}
+
+.now-hockey-game-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ffffffcc;
+  font: 700 10px var(--font-mono, monospace);
+  letter-spacing: 1.2px;
+}
+
+.now-hockey-game-visual img {
+  display: block;
+  width: auto;
+  max-width: 90%;
+  height: 275px;
+  object-fit: contain;
+  object-position: bottom;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.now-hockey-game:hover .now-hockey-game-visual img {
+  transform: scale(1.045);
+}
+
+@media (max-width: 767px) {
+  .now-hockey-game {
+    grid-template-columns: 1fr;
+    margin: 32px auto;
+  }
+
+  .now-hockey-game-content {
+    padding: 26px 22px;
+  }
+
+  .now-hockey-game-content h2 {
+    font-size: 30px;
+  }
+
+  .now-hockey-game-content p {
+    font-size: 12px;
+    margin-bottom: 22px;
+  }
+
+  .now-hockey-game-link {
+    width: 100%;
+    font-size: 11px;
+  }
+
+  .now-hockey-game-visual {
+    min-height: 210px;
+  }
+
+  .now-hockey-game-visual img {
+    height: 205px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .now-hockey-game-link,
+  .now-hockey-game-visual img {
+    transition: none;
+  }
+}
+
+/* Playground section heading */
+
+.now-playground {
+  width: 100%;
+  max-width: 1100px;
+  margin: 85px auto 70px;
+  scroll-margin-top: 110px;
+}
+
+.now-playground-header {
+  margin-bottom: 38px;
+  text-align: center;
+}
+
+.now-playground-eyebrow {
+  color: #8b4545;
+  font: 700 11px var(--font-mono, monospace);
+  letter-spacing: 2px;
+}
+
+.now-playground-header h2 {
+  margin: 13px 0 12px;
+  color: #2a2520;
+  font: 700 clamp(38px, 5vw, 56px)/1.15
+    var(--font-serif, Georgia, serif);
+}
+
+.now-playground-header p {
+  margin: 0;
+  color: #665c52;
+  font: 13px/1.8 var(--font-mono, monospace);
+}
+
+/* Override the previous large card margin */
+.now-playground .now-hockey-game {
+  margin: 0;
+}
+
+/* Previous card CSS targeted h2 */
+.now-hockey-game-content h3 {
+  max-width: 470px;
+  margin: 18px 0 14px;
+  color: #2a2520;
+  font: 700 clamp(27px, 3.6vw, 43px)/1.15
+    var(--font-serif, Georgia, serif);
+}
+
+@media (max-width: 767px) {
+  .now-playground {
+    margin: 50px auto 45px;
+    scroll-margin-top: 85px;
+  }
+
+  .now-playground-header {
+    margin-bottom: 24px;
+    padding: 0 14px;
+  }
+
+  .now-playground-header h2 {
+    font-size: 37px;
+  }
+
+  .now-playground-header p {
+    font-size: 11px;
+  }
+
+  .now-hockey-game-content h3 {
+    font-size: 30px;
+  }
+}
+
+/* Quick jump to the game */
+
+.now-playground-shortcut {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  width: fit-content;
+  margin: 20px auto 36px;
+  padding: 11px 16px;
+  border: 1px solid #b98c83;
+  background: #fdfcf9;
+  color: #8b4545;
+  font: 700 11px var(--font-mono, monospace);
+  letter-spacing: 0.7px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.now-playground-shortcut:hover {
+  background: #f1e9dc;
+  transform: translateY(-2px);
+}
+
+.now-playground-shortcut:focus-visible {
+  outline: 3px solid #c4a856;
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .now-playground-shortcut {
+    margin: 15px auto 24px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .now-playground-shortcut {
+    transition: none;
+  }
+}

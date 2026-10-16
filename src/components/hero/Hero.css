@@ -694,3 +694,66 @@
     opacity: 0;
   }
 }
+
+
+/* Small arcade invitation inside the Hero */
+
+.hero-arcade-link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 18px;
+  padding: 12px 15px;
+  border: 1px dashed #b98c83;
+  background: rgba(253, 252, 249, 0.75);
+  color: #8b4545;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hero-arcade-link:hover {
+  background: #f1e9dc;
+  transform: translateY(-2px);
+}
+
+.hero-arcade-icon {
+  flex-shrink: 0;
+  display: flex;
+}
+
+.hero-arcade-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.hero-arcade-copy strong {
+  font: 700 11px var(--font-mono, monospace);
+  letter-spacing: 1px;
+}
+
+.hero-arcade-copy > span {
+  color: #665c52;
+  font: 11px/1.5 var(--font-mono, monospace);
+}
+
+.hero-arcade-arrow {
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+@media (max-width: 767px) {
+  .hero-arcade-link {
+    width: 100%;
+    padding: 11px 12px;
+  }
+
+  .hero-arcade-copy > span {
+    font-size: 10px;
+  }
+}

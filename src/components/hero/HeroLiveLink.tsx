@@ -1,6 +1,6 @@
 
-import { ArrowUpRight } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
+import { ArrowUpRight, Gamepad2 } from 'lucide-react';
 export default function HeroLiveLink() {
   return (
     <div className="hero-live-container">

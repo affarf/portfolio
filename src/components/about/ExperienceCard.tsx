@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { Camera, ChevronDown, ChevronUp } from 'lucide-react';
 import { useInView } from '../../hooks/useInView';
 import type { Experience } from './experienceData';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 
 type Props = { experience: Experience; index: number };
 
@@ -33,11 +35,30 @@ export default function ExperienceCard({ experience, index }: Props) {
         {experience.description && (
           <p className="about-experience-description">{experience.description}</p>
         )}
-        <ul className="about-experience-highlights">
-          {experience.highlights.map((highlight) => (
-            <li key={highlight}>{highlight}</li>
-          ))}
-        </ul>
+        
+      
+      <ul className="about-experience-highlights">
+        {experience.highlights.map((highlight) => (
+          <li key={highlight}>
+            <span className="about-highlight-text">
+              {highlight}
+
+              {experience.id === 'education' &&
+                highlight.includes('Wisconsin Club Field Hockey Team') && (
+                  <Link
+                    to="/game"
+                    className="about-hockey-game-link"
+                  >
+                    🏑 PLAY BEAT THE KEEPER
+                    <ArrowUpRight size={13} aria-hidden="true" />
+                  </Link>
+                )}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+
 
         {photos.length > 0 && (
           <div className="about-photo-archive">

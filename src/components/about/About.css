@@ -160,3 +160,62 @@
     object-position: center;
   }
 }
+
+/* Mini-game link under the field hockey highlight */
+
+.about-hockey-game-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  margin-top: 7px;
+  color: #8b4545;
+  font: 700 10px var(--font-mono, monospace);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border-bottom: 1px dashed #b98c83;
+  padding-bottom: 3px;
+  transition: color 0.2s ease;
+}
+
+.about-hockey-game-link:hover {
+  color: #633030;
+  border-bottom-color: currentColor;
+}
+
+.about-hockey-game-link:focus-visible {
+  outline: 2px solid #8b4545;
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .about-hockey-game-link {
+    font-size: 9px;
+    margin-top: 6px;
+  }
+}
+/* Keep bullet text and game link in the same grid column */
+
+.about-highlight-text {
+  display: block;
+  min-width: 0;
+}
+
+.about-hockey-game-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 8px;
+  padding-bottom: 3px;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .about-hockey-game-link {
+    white-space: normal;
+    font-size: 9px;
+  }
+}
+
