@@ -238,20 +238,46 @@ export default function FieldHockeyGame() {
       horizontalDistance <= bodyReachPercent &&
       inKeeperHeight;
 
-    const outcome: Outcome = missed
-      ? 'miss'
-      : saved
-        ? 'save'
-        : 'goal';
 
-    const shot: Shot = {
-      target: actualTarget,
-      keeperX,
-      outcome,
-      power,
-      duration,
-      reaction: config.reaction,
-    };
+        const outcome: Outcome = missed
+        ? 'miss'
+        : saved
+            ? 'save'
+            : 'goal';
+
+        // Visual correction:
+        // If it's a goal, the keeper must visibly miss the ball.
+        // Move him to the opposite side of the target.
+        //
+        // For saves, keep the actual calculated keeper position.
+        let visualKeeperX = keeperX;
+
+        
+        if (outcome === 'goal') {
+        // Keeper sprite is wider on desktop than mobile.
+        // Reserve enough visual clearance for the photo.
+        const spriteWidth = goalWidth < 450 ? 77 : 145;
+
+        const safeDistance =
+            ((spriteWidth / 2 + 24) / goalWidth) * 100;
+
+        const missedPosition =
+            actualTarget.x < 50
+            ? actualTarget.x + safeDistance
+            : actualTarget.x - safeDistance;
+
+        visualKeeperX = clamp(missedPosition, 15, 85);
+        }
+
+
+        const shot: Shot = {
+        target: actualTarget,
+        keeperX: visualKeeperX,
+        outcome,
+        power,
+        duration,
+        reaction: config.reaction,
+        };
 
     setCurrentShot(shot);
     setShots((previous) => [...previous, shot]);
