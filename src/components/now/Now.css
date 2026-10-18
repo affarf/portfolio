@@ -787,3 +787,53 @@
     transition: none;
   }
 }
+
+/* ==========================================
+   MOBILE — PLAYGROUND SECTION FRAME
+   ========================================== */
+
+@media (max-width: 767px) {
+  .now-playground {
+    width: calc(100% - 32px);
+    max-width: 520px;
+    min-height: 0;
+    height: auto;
+    margin: 40px auto 48px;
+    padding: 24px 16px 20px;
+    box-sizing: border-box;
+
+    border: 2px solid #e0d4c8;
+    background: #f5f1ea;
+    box-shadow: 5px 6px 0 rgba(42, 37, 32, 0.06);
+  }
+
+  .now-playground-header {
+    margin-bottom: 24px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .now-playground-header h2 {
+    margin: 10px 0;
+    font-size: clamp(30px, 8vw, 39px);
+  }
+
+  .now-playground-header p {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .now-playground .now-hockey-game {
+    width: 100%;
+    margin: 0;
+    border: 1px solid #e8e4dd;
+  }
+
+  .now-hockey-game-content {
+    padding: 24px 20px;
+  }
+
+  .now-hockey-game-visual {
+    min-height: 210px;
+  }
+}

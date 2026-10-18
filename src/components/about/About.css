@@ -163,18 +163,34 @@
 
 /* Mini-game link under the field hockey highlight */
 
+
+/* ==========================================
+   FIELD HOCKEY — MINI GAME LINK
+   ========================================== */
+
+.about-highlight-text {
+  display: block;
+  min-width: 0;
+}
+
 .about-hockey-game-link {
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: flex-start;
+  gap: 7px;
+
   width: fit-content;
-  margin-top: 7px;
-  color: #8b4545;
-  font: 700 10px var(--font-mono, monospace);
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  border-bottom: 1px dashed #b98c83;
+  max-width: 100%;
+  margin: 9px 0 3px;
   padding-bottom: 3px;
+
+  color: #8b4545;
+  font: 700 11px/1.5 var(--font-mono, monospace);
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  white-space: normal;
+
+  border-bottom: 1px dashed #b98c83;
   transition: color 0.2s ease;
 }
 
@@ -190,10 +206,12 @@
 
 @media (max-width: 767px) {
   .about-hockey-game-link {
-    font-size: 9px;
-    margin-top: 6px;
+    margin-top: 8px;
+    font-size: 10px;
+    gap: 6px;
   }
 }
+
 /* Keep bullet text and game link in the same grid column */
 
 .about-highlight-text {
