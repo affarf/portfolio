@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 import Now from './components/Now';
 import Honors from './components/Honors';
 import FieldHockeyGame from './pages/FieldHockeyGame';
-import GameBanner from './components/GameBanner';
 
 import KnowledgeBaseCaseStudy from './pages/KnowledgeBaseCaseStudy';
 

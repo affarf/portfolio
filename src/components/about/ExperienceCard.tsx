@@ -43,16 +43,6 @@ export default function ExperienceCard({ experience, index }: Props) {
             <span className="about-highlight-text">
               {highlight}
 
-              {experience.id === 'education' &&
-                highlight.includes('Wisconsin Club Field Hockey Team') && (
-                  <Link
-                    to="/game"
-                    className="about-hockey-game-link"
-                  >
-                    🏑 PLAY BEAT THE KEEPER
-                    <ArrowUpRight size={13} aria-hidden="true" />
-                  </Link>
-                )}
             </span>
           </li>
         ))}
